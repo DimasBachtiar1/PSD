@@ -1,0 +1,3235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Quarto CRC Book - 1&nbsp; ——————————– TUGAS PROYEK SAINS DATA ——————————-</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chronic_Kidney_Disease.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">**-------------------------------- TUGAS PROYEK SAINS DATA -------------------------------**</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Quarto CRC Book</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chronic_Kidney_Disease.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>——————————– TUGAS PROYEK SAINS DATA ——————————-</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#busines-understanding" id="toc-busines-understanding" class="nav-link active" data-scroll-target="#busines-understanding"><span class="header-section-number">1.1</span> 1. Busines Understanding</a>
+  <ul class="collapse">
+  <li><a href="#tujuan-proyek" id="toc-tujuan-proyek" class="nav-link" data-scroll-target="#tujuan-proyek"><span class="header-section-number">1.1.1</span> Tujuan Proyek</a></li>
+  <li><a href="#deskripsi-fitur" id="toc-deskripsi-fitur" class="nav-link" data-scroll-target="#deskripsi-fitur"><span class="header-section-number">1.1.2</span> DESKRIPSI FITUR</a></li>
+  </ul></li>
+  <li><a href="#data-understanding" id="toc-data-understanding" class="nav-link" data-scroll-target="#data-understanding"><span class="header-section-number">1.2</span> 2. Data Understanding</a>
+  <ul class="collapse">
+  <li><a href="#pengumpulan-data" id="toc-pengumpulan-data" class="nav-link" data-scroll-target="#pengumpulan-data"><span class="header-section-number">1.2.1</span> Pengumpulan Data</a></li>
+  <li><a href="#eksplorasi-data" id="toc-eksplorasi-data" class="nav-link" data-scroll-target="#eksplorasi-data"><span class="header-section-number">1.2.2</span> Eksplorasi Data</a></li>
+  <li><a href="#tipe-data" id="toc-tipe-data" class="nav-link" data-scroll-target="#tipe-data"><span class="header-section-number">1.2.3</span> Tipe Data</a></li>
+  <li><a href="#deskripsi-data" id="toc-deskripsi-data" class="nav-link" data-scroll-target="#deskripsi-data"><span class="header-section-number">1.2.4</span> Deskripsi Data</a></li>
+  <li><a href="#mengidentifikasi-missing-value" id="toc-mengidentifikasi-missing-value" class="nav-link" data-scroll-target="#mengidentifikasi-missing-value"><span class="header-section-number">1.2.5</span> Mengidentifikasi missing value</a></li>
+  <li><a href="#duplikat-data" id="toc-duplikat-data" class="nav-link" data-scroll-target="#duplikat-data"><span class="header-section-number">1.2.6</span> Duplikat data</a></li>
+  <li><a href="#mengidentifikasi-karakter-khusus" id="toc-mengidentifikasi-karakter-khusus" class="nav-link" data-scroll-target="#mengidentifikasi-karakter-khusus"><span class="header-section-number">1.2.7</span> Mengidentifikasi Karakter Khusus</a></li>
+  <li><a href="#mengidentifikasi-outlier" id="toc-mengidentifikasi-outlier" class="nav-link" data-scroll-target="#mengidentifikasi-outlier"><span class="header-section-number">1.2.8</span> Mengidentifikasi Outlier</a></li>
+  </ul></li>
+  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing"><span class="header-section-number">1.3</span> 3. Data Preprocessing</a>
+  <ul class="collapse">
+  <li><a href="#cleaning-data" id="toc-cleaning-data" class="nav-link" data-scroll-target="#cleaning-data"><span class="header-section-number">1.3.1</span> Cleaning Data</a></li>
+  <li><a href="#mengisi-data-missing-value" id="toc-mengisi-data-missing-value" class="nav-link" data-scroll-target="#mengisi-data-missing-value"><span class="header-section-number">1.3.2</span> Mengisi data missing value</a></li>
+  <li><a href="#menghapus-data-outlier" id="toc-menghapus-data-outlier" class="nav-link" data-scroll-target="#menghapus-data-outlier"><span class="header-section-number">1.3.3</span> Menghapus Data Outlier</a></li>
+  <li><a href="#ranking-setiap-fitur-dalam-data" id="toc-ranking-setiap-fitur-dalam-data" class="nav-link" data-scroll-target="#ranking-setiap-fitur-dalam-data"><span class="header-section-number">1.3.4</span> RANKING SETIAP FITUR DALAM DATA</a></li>
+  <li><a href="#split-data" id="toc-split-data" class="nav-link" data-scroll-target="#split-data"><span class="header-section-number">1.3.5</span> Split Data</a></li>
+  <li><a href="#normalisasi-data" id="toc-normalisasi-data" class="nav-link" data-scroll-target="#normalisasi-data"><span class="header-section-number">1.3.6</span> Normalisasi Data</a></li>
+  </ul></li>
+  <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling"><span class="header-section-number">1.4</span> 4. MODELING</a>
+  <ul class="collapse">
+  <li><a href="#random-forest" id="toc-random-forest" class="nav-link" data-scroll-target="#random-forest"><span class="header-section-number">1.4.1</span> RANDOM FOREST</a></li>
+  </ul></li>
+  <li><a href="#evaluasi-model" id="toc-evaluasi-model" class="nav-link" data-scroll-target="#evaluasi-model"><span class="header-section-number">1.5</span> EVALUASI MODEL</a>
+  <ul class="collapse">
+  <li><a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link" data-scroll-target="#confusion-matrix"><span class="header-section-number">1.5.1</span> CONFUSION MATRIX</a></li>
+  <li><a href="#grafik-roc-auc" id="toc-grafik-roc-auc" class="nav-link" data-scroll-target="#grafik-roc-auc"><span class="header-section-number">1.5.2</span> GRAFIK ROC-AUC</a></li>
+  </ul></li>
+  <li><a href="#deployment" id="toc-deployment" class="nav-link" data-scroll-target="#deployment"><span class="header-section-number">1.6</span> 5. Deployment</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>——————————– TUGAS PROYEK SAINS DATA ——————————-</strong></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<hr>
+<ul>
+<li>NAMA : DIMAS BACHTIAR</li>
+<li>NIM : 210411100022</li>
+<li>KELAS : B</li>
+</ul>
+<hr>
+<section id="busines-understanding" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="busines-understanding"><span class="header-section-number">1.1</span> 1. Busines Understanding</h2>
+<hr>
+<section id="tujuan-proyek" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="tujuan-proyek"><span class="header-section-number">1.1.1</span> Tujuan Proyek</h3>
+<p>Melakukan Klasifikasi penyakit ginjal kronis untuk memprediksi apakah seseorang terkena penyakit ginjal kronis atau tidak. Untuk menentukan prediksi penyakit ginjal kronis dapat dilihat pada kelas berikut:</p>
+<ul>
+<li>Apabila data memiliki kelas <em>ckd</em> (Chronic Kidney Disease) maka dinyatakan terkena penyakit ginjal kronis</li>
+<li>Apabila data memiliki kelas <em>notckd</em> (Not Chronic Kidney Disease) maka dinyatakan tidak terkena penyakit ginjal kronis</li>
+</ul>
+<p>Untuk menentukan klasifikasi penyakit ginjal kronis dapat dilihat dari ciri-ciri sebagai berikut:</p>
+</section>
+<section id="deskripsi-fitur" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="deskripsi-fitur"><span class="header-section-number">1.1.2</span> DESKRIPSI FITUR</h3>
+<ol type="1">
+<li><p>Age (umur)</p></li>
+<li><p>Blood Pressure (Tekanan Darah)</p>
+<blockquote class="blockquote">
+<p>bp in mm/Hg</p>
+</blockquote></li>
+<li><p>Specific Gravity (Berat jenis Urin)</p>
+<blockquote class="blockquote">
+<p>sg - (1.005,1.010,1.015,1.020,1.025)</p>
+</blockquote></li>
+<li><p>Albumin (Kadar albumin dalam urin)</p>
+<blockquote class="blockquote">
+<p>al - (0,1,2,3,4,5)</p>
+</blockquote></li>
+<li><p>Sugar (Kadar gula dalam urin)</p>
+<blockquote class="blockquote">
+<p>su - (0,1,2,3,4,5)</p>
+</blockquote></li>
+<li><p>Red Blood Cells (sel darah merah)</p>
+<blockquote class="blockquote">
+<p>rbc - (normal,abnormal)</p>
+</blockquote></li>
+<li><p>Pus Cell (sel darah putih)</p>
+<blockquote class="blockquote">
+<p>pc - (normal,abnormal)</p>
+</blockquote></li>
+<li><p>Pus Cell clumps (gumpalan sel darah putih)</p>
+<blockquote class="blockquote">
+<p>pcc - (present,notpresent)</p>
+</blockquote></li>
+<li><p>Bacteria (bakteri dalam urin)</p>
+<blockquote class="blockquote">
+<p>ba - (present,notpresent)</p>
+</blockquote></li>
+<li><p>Blood Glucose Random (kadar glukosa darah)</p>
+<blockquote class="blockquote">
+<p>bgr in mgs/dl</p>
+</blockquote></li>
+<li><p>Blood Urea (kadar urea dalam darah)</p>
+<blockquote class="blockquote">
+<p>bu in mgs/dl</p>
+</blockquote></li>
+<li><p>Serum Creatinine (kadar kreatin dalam darah)</p>
+<blockquote class="blockquote">
+<p>sc in mgs/dl</p>
+</blockquote></li>
+<li><p>Sodium (kadar natrium dalam darah)</p>
+<blockquote class="blockquote">
+<p>sod in mEq/L</p>
+</blockquote></li>
+<li><p>Potassium (kadar kalium dalam darah)</p>
+<blockquote class="blockquote">
+<p>pot in mEq/L</p>
+</blockquote></li>
+<li><p>Hemoglobin (kadar hemoglobin)</p>
+<blockquote class="blockquote">
+<p>hemo in gms</p>
+</blockquote></li>
+<li><p>Packed Cell Volume (volume sel darah merah dalam darah)</p></li>
+<li><p>White Blood Cell Count (jumlah sel darah putih)</p>
+<blockquote class="blockquote">
+<p>wc in cells/cumm</p>
+</blockquote></li>
+<li><p>Red Blood Cell Count (jumlah sel darah merah)</p>
+<blockquote class="blockquote">
+<p>rc in millions/cmm</p>
+</blockquote></li>
+<li><p>Hypertension (hipertensi)</p>
+<blockquote class="blockquote">
+<p>htn - (yes,no)</p>
+</blockquote></li>
+<li><p>Diabetes Mellitus(keberadaan diabetes melitus)</p>
+<blockquote class="blockquote">
+<p>dm - (yes,no)</p>
+</blockquote></li>
+<li><p>Coronary Artery Disease (keberadaan penyakit arteri koroner)</p>
+<blockquote class="blockquote">
+<p>cad - (yes,no)</p>
+</blockquote></li>
+<li><p>Appetite (kondisi nafsu makan)</p>
+<blockquote class="blockquote">
+<p>appet - (good,poor)</p>
+</blockquote></li>
+<li><p>Pedal Edema (keberadaan edema pada kaki)</p>
+<blockquote class="blockquote">
+<p>pe - (yes,no)</p>
+</blockquote></li>
+<li><p>Anemia (keberadaan anemia)</p>
+<blockquote class="blockquote">
+<p>ane - (yes,no)</p>
+</blockquote></li>
+</ol>
+<p>Untuk refrensi bisa diakses link berikut : https://archive.ics.uci.edu/dataset/336/chronic+kidney+disease</p>
+</section>
+</section>
+<section id="data-understanding" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="data-understanding"><span class="header-section-number">1.2</span> 2. Data Understanding</h2>
+<p>Tujuan dari data understanding ini adalah untuk memahami struktur, karakteristik, dan kualitas data yang akan digunakan untuk analisis lebih lanjut.</p>
+<p>Adapun hal - hal yang perlu dilakukan data understanding sebagai berikut : 1. Pengumpulan Data 2. Eksplorasi Data - Mengidentifikasi jumlah data - Mendeskripsikan setiap fitur pada data * tipe data * deskripsi data - Visualisasi data 3. Mengidentifikasi missing values setiap fitur atau kolom 4. Mengidentifikasi outlier</p>
+<hr>
+<section id="pengumpulan-data" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="pengumpulan-data"><span class="header-section-number">1.2.1</span> Pengumpulan Data</h3>
+<p>Data ini diambil selama periode 2 bulan di India dengan 25 fitur (misalnya jumlah sel darah merah, jumlah sel darah putih, dll). Targetnya adalah ‘klasifikasi’, yaitu ‘ckd’ atau ‘notckd’ - ckd = penyakit ginjal kronis. Penyakit Ginjal Kronis adalah suatu kondisi di mana fungsi ginjal secara bertahap menurun selama periode waktu yang cukup lama. Ginjal memiliki peran penting dalam menyaring limbah dan kelebihan cairan dari darah, serta dalam menjaga keseimbangan elektrolit dan tekanan darah.</p>
+</section>
+<section id="eksplorasi-data" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="eksplorasi-data"><span class="header-section-number">1.2.2</span> Eksplorasi Data</h3>
+<p>Eksplorasi data awal adalah tahap awal dalam proses analisis data yang bertujuan untuk memahami sifat dan karakteristik data sebelum dilakukan analisis lebih lanjut. Langkah-langkah eksplorasi data awal memberikan wawasan awal tentang isi dataset dan membantu peneliti atau analis data dalam merencanakan pendekatan analisis yang tepat.</p>
+<p><strong>Mengidentifikasi jumlah data</strong></p>
+<p>Mengidentifikasi jumlah data merupakan langkah awal untuk memahami skala dataset yang akan kita lakukan pengolahan. Dengan mengetahui jumlah baris (observasi) dan kolom (fitur) atau gambaran umum tentang ukuran data.</p>
+<p>Jumlah Dataset sebanyak 400 dengan rincian sebagai berikut :</p>
+<ul>
+<li>Chronic Kidney Disease (ckd) = 250</li>
+<li>Not Chronic Kidney Disesae (notckd) = 150</li>
+</ul>
+<div class="cell" data-outputid="67d81432-d26e-4ed1-89e8-206308c7302a" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Menyambungkan Google Drive dengan Google Colab</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>drive.mount(<span class="st">"/content/drive"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>cd <span class="op">/</span>content<span class="op">/</span>drive<span class="op">/</span>MyDrive<span class="op">/</span>PSD<span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mounted at /content/drive
+/content/drive/MyDrive/PSD</code></pre>
+</div>
+</div>
+<div class="cell" data-outputid="c88c6e40-ec00-457c-cb5d-ce19d9c8e9b4" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'kidney_disease.csv'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+
+  <div id="df-5c149eca-2f96-4b2e-8e82-09470266d761" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">bp</th>
+<th data-quarto-table-cell-role="th">sg</th>
+<th data-quarto-table-cell-role="th">al</th>
+<th data-quarto-table-cell-role="th">su</th>
+<th data-quarto-table-cell-role="th">rbc</th>
+<th data-quarto-table-cell-role="th">pc</th>
+<th data-quarto-table-cell-role="th">pcc</th>
+<th data-quarto-table-cell-role="th">ba</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">pcv</th>
+<th data-quarto-table-cell-role="th">wc</th>
+<th data-quarto-table-cell-role="th">rc</th>
+<th data-quarto-table-cell-role="th">htn</th>
+<th data-quarto-table-cell-role="th">dm</th>
+<th data-quarto-table-cell-role="th">cad</th>
+<th data-quarto-table-cell-role="th">appet</th>
+<th data-quarto-table-cell-role="th">pe</th>
+<th data-quarto-table-cell-role="th">ane</th>
+<th data-quarto-table-cell-role="th">classification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>48.0</td>
+<td>80.0</td>
+<td>1.020</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>normal</td>
+<td>notpresent</td>
+<td>notpresent</td>
+<td>...</td>
+<td>44</td>
+<td>7800</td>
+<td>5.2</td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+<td>good</td>
+<td>no</td>
+<td>no</td>
+<td>ckd</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>7.0</td>
+<td>50.0</td>
+<td>1.020</td>
+<td>4.0</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>normal</td>
+<td>notpresent</td>
+<td>notpresent</td>
+<td>...</td>
+<td>38</td>
+<td>6000</td>
+<td>NaN</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>good</td>
+<td>no</td>
+<td>no</td>
+<td>ckd</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2</td>
+<td>62.0</td>
+<td>80.0</td>
+<td>1.010</td>
+<td>2.0</td>
+<td>3.0</td>
+<td>normal</td>
+<td>normal</td>
+<td>notpresent</td>
+<td>notpresent</td>
+<td>...</td>
+<td>31</td>
+<td>7500</td>
+<td>NaN</td>
+<td>no</td>
+<td>yes</td>
+<td>no</td>
+<td>poor</td>
+<td>no</td>
+<td>yes</td>
+<td>ckd</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>3</td>
+<td>48.0</td>
+<td>70.0</td>
+<td>1.005</td>
+<td>4.0</td>
+<td>0.0</td>
+<td>normal</td>
+<td>abnormal</td>
+<td>present</td>
+<td>notpresent</td>
+<td>...</td>
+<td>32</td>
+<td>6700</td>
+<td>3.9</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+<td>poor</td>
+<td>yes</td>
+<td>yes</td>
+<td>ckd</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>4</td>
+<td>51.0</td>
+<td>80.0</td>
+<td>1.010</td>
+<td>2.0</td>
+<td>0.0</td>
+<td>normal</td>
+<td>normal</td>
+<td>notpresent</td>
+<td>notpresent</td>
+<td>...</td>
+<td>35</td>
+<td>7300</td>
+<td>4.6</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>good</td>
+<td>no</td>
+<td>no</td>
+<td>ckd</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>5 rows × 26 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-5c149eca-2f96-4b2e-8e82-09470266d761')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-5c149eca-2f96-4b2e-8e82-09470266d761 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-5c149eca-2f96-4b2e-8e82-09470266d761');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-6ca351f3-aa1a-45df-a144-6ad127ab7949">
+  <button class="colab-df-quickchart" onclick="quickchart('df-6ca351f3-aa1a-45df-a144-6ad127ab7949')" title="Suggest charts" style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-6ca351f3-aa1a-45df-a144-6ad127ab7949 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="cell" data-outputid="e59ba96e-ff6c-45f1-af34-7724de738706" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rincian dataset (banyak data dan kolom)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya data : "</span>, df.shape[<span class="dv">0</span>])</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya kolom : "</span>, df.shape[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Banyaknya data :  400
+Banyaknya kolom :  26</code></pre>
+</div>
+</div>
+<p><strong>IdenItifikasi Proporsi Jumlah Masing-masing Kelas Dalam Data</strong></p>
+<p>Untuk mencapai hasil maksimal, perlu dilakukan identifikasi proporsi jumlah data dari masing-masing kelas. Dengan begitu ketidakseimbangan data disetiap kelas pada data penyakit ginjal kronis ini dapat ditangani dengan menyeimbangkan jumlah data disetiap kelasnya.</p>
+<div class="cell" data-outputid="38be393e-ac8a-4d89-951e-bddb32ab7bdd" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Menghitung jumlah target pada data tanpa outlier</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> df[<span class="st">'classification'</span>].value_counts()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jumlah data pada tiap target :"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(target)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Jumlah data pada tiap target :
+ckd       248
+notckd    150
+ckd\t       2
+Name: classification, dtype: int64</code></pre>
+</div>
+</div>
+<p>Diperoleh identifikasi setiap target sebanyak 2 kelas yaitu ckd dan notckd. Kelas ckd memiliki jumlah yang lebih besar dibandingkan dengan notckd. Akan tetapi selisih dari jumlah data tersebut tidak terlalu jauh, sehingga tidak perlu dilakukan balancing data.</p>
+<p><strong>Mendeskripsikan setiap fitur</strong></p>
+<p>Chronic Kidney Disease / Penyakit Ginjal Kronis pada dataset ini terdapat 25 fitur dengan jumlah data sebanyak 400.</p>
+<div class="cell" data-outputid="5e8bf672-47ba-4777-ea22-f52bee015420" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>Index(['id', 'age', 'bp', 'sg', 'al', 'su', 'rbc', 'pc', 'pcc', 'ba', 'bgr',
+       'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wc', 'rc', 'htn', 'dm', 'cad',
+       'appet', 'pe', 'ane', 'classification'],
+      dtype='object')</code></pre>
+</div>
+</div>
+</section>
+<section id="tipe-data" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="tipe-data"><span class="header-section-number">1.2.3</span> Tipe Data</h3>
+<p>Berikut Macam - Macam Data yang ada pada data ini.</p>
+<ol type="1">
+<li>Tipe nominal Tipe nominal adalah variabel yang menggambarkan kategori tanpa memiliki urutan tertentu atau tingkat peringkat yang melekat. Berikut tipe nominal yang terdapat pada data ini :
+<ul>
+<li>memiliki value 1.005,1.010,1.015,1.020, dan 1.025. &gt; yaitu fitur : <em>‘Specific Gravity (sg)’</em></li>
+<li>memiliki value 0,1,2,3,4, dan 5. &gt; yaitu pada fitur <em>‘Albumin (al)’ dan Sugar (su)</em></li>
+<li>memiliki value normal dan abnormal. &gt; yakni pada fitur <em>‘Red Blood Cells(rbc)’dan’Pus Cell(pc)’</em></li>
+<li>memiliki value normal dan abnormal. &gt; yakni pada fitur <em>‘Red Blood Cells(rbc)’dan’Pus Cell(pc)’</em></li>
+<li>memiliki value present dan notpresent. &gt; yakni pada fitur <em>‘Pus Cell clumps(pcc)’ dan ‘Bacteria(ba)’</em></li>
+<li>memiliki value yes dan no. &gt; yakni pada fitur <em>‘Hypertension(htn)’, ‘Diabetes Mellitus(dm)’, ‘Coronary Artery Disease(cad)’, ‘Pedal Edema(pe)’, dan ‘Anemia’(ane)</em></li>
+<li>memiliki value ckd dan notckd. &gt; yakni pada fitur <em>‘Classification’</em></li>
+<li>memiliki tipe data numeric. &gt; yakni pada fitur <em>‘Age’, ‘Blood Pressure’, ‘Blood Glucose Random’, ‘Blood Urea’, ‘Serum Creatinine’, ‘Sodium’, ‘Potassium’, ‘Hemoglobin’, ‘Packed Cell Volume’, ‘White Blood Cell Count’, dan ‘Red Blood Cell Count’,</em></li>
+</ul></li>
+<li>Tipe ordinal Tipe ordinal adalah variabel yang memiliki kategori dengan urutan atau tingkat peringkat yang dapat dibandingkan. Berikut tipe ordinal yang terdapat pada data ini : &gt; yakni pada fitur <em>‘Appetite’</em> dengan value <em>good</em> dan <em>poor</em></li>
+</ol>
+</section>
+<section id="deskripsi-data" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="deskripsi-data"><span class="header-section-number">1.2.4</span> Deskripsi Data</h3>
+<ol type="1">
+<li><p>Age (umur)</p>
+<blockquote class="blockquote">
+<p>umur dalam tahun Data diperoleh dari usia seseorang saat pengambilan data</p>
+</blockquote></li>
+<li><p>Blood Pressure (Tekanan Darah)</p>
+<blockquote class="blockquote">
+<p>bp in mm/Hg</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Peningkatan tekanan darah menjadi indikator atau faktor resiko dari penyakit ginjal kronis. Tekanan darah dapat diukur dengan menggunakan alat pengukur pengukur tekanan darah yaitu sphygmomanometer. Pengukurannya ada 2 cara yaiut :tekanan sistolik (saat jantung berkontraksi) dan tekanan diastolik (saat jantung beristirahat). Keduanya diukur dalam milimeter air raksa (mmHg).</p>
+</blockquote></li>
+<li><p>Specific Gravity (Berat jenis Urin)</p>
+<blockquote class="blockquote">
+<p>sg - (1.005,1.010,1.015,1.020,1.025)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Berat jenis urin mengukur seberapa padat atau encer urin seseorang. Normalnya, urin yang diproduksi oleh ginjal memiliki berat jenis tertentu yang mencerminkan kemampuan ginjal untuk menyaring zat-zat dalam darah dan membuangnya melalui urin. Pada orang dengan PGK, ginjal mungkin mengalami kesulitan menyaring dan membuang zat-zat tertentu, sehingga dapat terjadi perubahan pada berat jenis urin. Pengambilan data berat jenis urin dapat dilakukan dengan tiga cara yaitu Urinometer, Strip Uji Urin, dan Laboratorium. Untuk berat jenis urin normal berkisar antara 1.010 hingga 1.025. Akan tetapi, terdapat beberapa faktor yang mempengaruhi berat jenis urine normal, salah satunya pada kondisi medis seperti gagal ginjal, infeksi saluran kemih, dan diabetes dapat memiliki berat jenis urine dengan rentang 1.020 hingga 1.030 g/ml.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Referensi : https://jenis.id/berat-jenis-urine-normal/</p>
+</blockquote></li>
+<li><p>Albumin (Kadar albumin dalam urin)</p>
+<blockquote class="blockquote">
+<p>al - (0,1,2,3,4,5)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Albumin adalah salah satu protein dalam darah yang berperan penting dalam mempertahankan tekanan osmotik darah, serta membantu dalam transportasi zat-zat seperti hormon dan nutrisi. Albumin juga dapat diukur dalam urin, dan tingkat albumin dalam urin sering digunakan sebagai indikator dalam klasifikasi penyakit ginjal kronis (PGK). Pengambilan data albumin dapat dilakukan dengan dua cara yaitu Uji Tinja (Dipstick Test) dan Uji Laboratorium. Untuk penjelasan rentang albumin 0,1,2,3,4,5 sebagai berikut:</p>
+</blockquote></li>
+</ol>
+<blockquote class="blockquote">
+<p>0: Tidak ada atau kadar albumin sangat rendah, yang mungkin dianggap normal</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>1: Tingkat mikroalbuminuria yang rendah, mungkin menunjukkan adanya kerusakan ginjal yang awal.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>2: Peningkatan tingkat mikroalbuminuria, menunjukkan adanya kerusakan ginjal yang sedang.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>3-4: Mungkin menunjukkan peningkatan yang lebih signifikan dalam tingkat albuminuria, mencerminkan kerusakan ginjal yang lebih parah.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>5: Paling mungkin menunjukkan tingkat albuminuria yang sangat tinggi, mungkin dianggap sebagai makroalbuminuria, yang sering kali dihubungkan dengan progresi penyakit ginjal yang signifikan.</p>
+</blockquote>
+<ol start="5" type="1">
+<li><p>Sugar (Kadar gula dalam urin)</p>
+<blockquote class="blockquote">
+<p>su - (0,1,2,3,4,5)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Kadar glukosa dalam darah dapat memberikan indikasi tentang fungsi ginjal dan kesehatan tubuh secara keseluruhan. Penyakit ginjal kronis bisa memengaruhi metabolisme glukosa dan menyebabkan peningkatan kadar gula dalam darah, yang dapat terlihat dalam urin. Pengambilan data albumin dapat dilakukan dengan cara Uji Pendektesian Gula. Untuk alat yang digunakan yaitu mikroskop atau alat tes kimia. Untuk penjelasan rentang albumin 0,1,2,3,4,5 sebagai berikut:</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>0: Kadar gula dalam urin yang diukur sebagai 0 mungkin menunjukkan bahwa tidak ada atau hanya sedikit glukosa yang terdeteksi dalam urin. Dalam keadaan normal, urin seharusnya tidak mengandung glukosa yang signifikan.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>1: Kadar gula dalam urin sebesar 1 mungkin menunjukkan adanya sedikit glukosa dalam urin. Meskipun nilai ini masih di bawah ambang batas normal, bisa menjadi perhatian dan memerlukan pemantauan lebih lanjut.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>2: Kadar gula dalam urin sebesar 2 mungkin menunjukkan peningkatan glukosa yang lebih signifikan dalam urin. Ini bisa mengindikasikan adanya gangguan metabolisme glukosa atau ketidaknormalan pada ginjal.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>3-4: Kadar gula dalam urin sebesar 3 atau 4 mungkin menunjukkan peningkatan yang lebih signifikan dalam glukosa urin. Ini bisa terkait dengan masalah metabolik yang lebih serius dan perlu ditinjau lebih lanjut oleh profesional medis.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>5: Kadar gula dalam urin sebesar 5 mungkin menunjukkan tingkat glukosa yang sangat tinggi dalam urin. Ini bisa merupakan tanda gangguan metabolisme glukosa yang serius atau masalah ginjal yang signifikan.</p>
+</blockquote></li>
+<li><p>Red Blood Cells (sel darah merah)</p>
+<blockquote class="blockquote">
+<p>rbc - (normal,abnormal)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Sel darah merah (eritrosit) adalah komponen seluler darah yang membawa oksigen dari paru-paru ke seluruh tubuh dan mengangkut karbon dioksida dari seluruh tubuh kembali ke paru-paru untuk dikeluarkan. Kaitannya dengan penyakit ginjal kronis adalah penyakit ini dapat menyebabkan anemia (kurang darah) karena produksi hormon eritropoietin berkurang, ini diperlukan untuk merangsang pembentukan sel darah merah di dalam sumsum tulang. Pengambilan data sel darah merah dapat dilakukan dengan 3 cara yaitu, Hitung Sel Darah Merah(RBC Count), Hemoglobin (Hb) dan Hematokrit (Hct), dan Indeks Sel Darah Merah (MCV, MCH, MCHC). Untuk penjelasan sel darah merah dikatakan normal dan abnormal sebagai berikut :</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>normal : Jumlah sel darah merah, kadar hemoglobin, dan parameter terkait dalam rentang normal menunjukkan fungsi normal sel darah merah. Tidak adanya anemia atau gangguan produksi sel darah merah.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>abnormal : Pengurangan jumlah sel darah merah, kadar hemoglobin, atau perubahan pada indeks sel darah merah bisa menjadi indikasi adanya anemia yang dapat terkait dengan PGK.</p>
+</blockquote></li>
+<li><p>Pus Cell (sel darah putih)</p>
+<blockquote class="blockquote">
+<p>pc - (normal,abnormal)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Sel darah putih (leukosit) adalah sel-sel yang berperan dalam sistem kekebalan tubuh. Penyakit ginjal kronis (PGK) dapat mempengaruhi sistem kekebalan tubuh, dan perubahan pada jumlah sel darah putih dapat menjadi fitur yang diobservasi dalam klasifikasi PGK. Peningkatan jumlah sel darah putih dapat mencerminkan respon kekebalan tubuh terhadap peradangan atau infeksi yang terkait dengan PGK. Pengambilan data sel darah putih dapat dilakukan dengan 2 cara yaitu Tes Darah Rutin (Complete Blood Count/CBC) dan Darah Urin. Untuk penjelasan sel darah putih dikatakan normal dan abnormal sebagai berikut :</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>normal : Jumlah sel darah putih dalam darah biasanya berada dalam rentang normal yaitu berkisar antara 4,500−10.000 sel/mm³.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>abnormal : Terjadinya kekurangan atau kelebihan sel darah putih, untuk kekurangan sel darah merah yaitu sekitar 4.000 sel/mm³. Dan untuk kelebihan sel darah putih yaitu lebih dari angka 11.000 sel/mm³.</p>
+</blockquote></li>
+<li><p>Pus Cell clumps (gumpalan sel darah putih)</p>
+<blockquote class="blockquote">
+<p>pcc - (present,notpresent)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Pus Cell Clumps (klompok sel darah putih) dalam urin dapat menunjukkan adanya peradangan atau infeksi dalam sistem kemih, termasuk pada ginjal, yang dapat terkait dengan penyakit ginjal kronis (PGK). Pengambilan data sel darah putih dapat dilakukan dengan 2 cara yaitu Uji Urin Mikroskopis dan Strip Uji Urin. Untuk penjelasan Pus Cell clumps dikatakan present dan not present sebagai berikut :</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>present : adanya peradangan atau infeksi dalam sistem kemih pada saat pemeriksaan urin.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>not present : tidak adanya peradangan atau infeksi dalam sistem kemih pada saat pemeriksaan urin.</p>
+</blockquote></li>
+<li><p>Bacteria (bakteri dalam urin)</p>
+<blockquote class="blockquote">
+<p>ba - (present,notpresent)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Bakteri dalam urin dapat menunjukkan adanya infeksi saluran kemih, yang bisa terkait dengan kondisi ginjal atau sistem kemih yang mendasari. Pengambilan data sel darah putih dapat dilakukan dengan cara uji laboratorium pada sampel urin menggunakan alat mikroskop atau alat tes kimia. Untuk penjelasan bacteria dikatakan present dan not present sebagai berikut :</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>present : adanya keberadaan bakteri dalam sistem kemih pada saat pemeriksaan urin.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>not present : tidak adanya keberadaan bakteri dalam sistem kemih pada saat pemeriksaan urin.</p>
+</blockquote></li>
+<li><p>Blood Glucose Random (kadar glukosa darah)</p>
+<blockquote class="blockquote">
+<p>bgr in mgs/dl</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Glukosuria adalah kondisi terdapatnya ekskresi glukosa di dalam urine yang mengacu pada kondisi patologis seperti diabetes mellitus atau gangguan fungsi ginjal. Adanya ekskresi glukosa di dalam urine dapat terjadi pada keadaan dengan kadar glukosa plasma yang normal maupun kadar glukosa plasma yang tinggi. Diagnosis glukosuria dapat ditegakkan melalui pemeriksaan urinalisis. Bila pada pemeriksaan ditemukan kadar glukosa di atas 25 mg/dl pada urine segar acak (random fresh urine), maka pasien dapat dikatakan mengalami glukosuria.</p>
+</blockquote></li>
+<li><p>Blood Urea (kadar urea dalam darah)</p>
+<blockquote class="blockquote">
+<p>bu in mgs/dl</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Kadar ureum tinggi bisa menandakan bahwa ginjal Anda tidak berfungsi dengan baik. Idealnya, ginjal berfungsi menyaring dan membuang ureum dari darah melalui urine. Jika menumpuk di darah, ureum dapat menimbulkan beragam keluhan dan gangguan kesehatan. Ureum merupakan zat sisa dari pemecahan protein dan asam amino di dalam hati. Kadar ureum dapat diukur melalui tes blood urea nitrogen (BUN). Zat ini bersifat racun dan perlu segera dikeluarkan dari tubuh melalui ginjal. Batas normal kadar ureum berdasarkan usia dan jenis kelamin sebagai berikut :</p>
+</blockquote>
+<ul>
+<li>Pria dewasa: 8–24 mg/dL</li>
+<li>Wanita dewasa: 6–21 mg/dL</li>
+<li>Anak usia 1–17 tahun: 7–20 mg/dL</li>
+</ul></li>
+<li><p>Serum Creatinine (kadar kreatin dalam darah)</p>
+<blockquote class="blockquote">
+<p>sc in mgs/dl</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Kreatinin adalah zat limbah dalam darah yang diproduksi oleh jaringan otot saat Anda bergerak atau beraktivitas. Jumlah kreatinin di dalam darah diatur oleh ginjal. Itulah alasan mengapa pemeriksaan kadar kreatinin sering dilakukan sebagai salah satu cara untuk menilai fungsi ginjal.Normalnya, kreatinin dalam darah akan disaring oleh ginjal, lalu dibuang keluar melalui urine. Ketika ginjal bermasalah atau fungsinya terganggu, kreatinin tidak dapat disaring dengan baik. Hal ini dapat menyebabkan kadar kreatinin dalam darah meningkat dan dan menyebabkan fungsi ginjal terganggu.Kadar kreatinin normal dalam darah pada orang dewasa adalah 0,8–1,2 mg/dL. Namun, rentang nilai tersebut mungkin saja bervariasi pada setiap laboratorium.</p>
+</blockquote></li>
+<li><p>Sodium (kadar natrium dalam darah)</p>
+<blockquote class="blockquote">
+<p>sod in mEq/L</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Sodium adalah elektrolit yang sangat penting dalam tubuh dan memiliki peran dalam menjaga keseimbangan cairan, tekanan darah, dan fungsi saraf dan otot. Dalam konteks penyakit ginjal kronis (PGK), kadar sodium dalam tubuh dapat berubah akibat gangguan fungsi ginjal dan keseimbangan elektrolit yang terkait. Pengambilan data sel darah putih dapat dilakukan dengan 3 cara yaitu, Tes Elektrolit, Tes Fungsi Ginjal, dan Pemeriksaan Urine. Standar kebutuhan sodium seseorang dewasa berklisar antara 1500-2300 mg sodium.</p>
+</blockquote></li>
+<li><p>Potassium (kadar kalium dalam darah)</p>
+<blockquote class="blockquote">
+<p>pot in mEq/L</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Kalium atau potasium adalah mineral yang membantu tubuh menyeimbangkan cairan dan mendukung fungsi sel, saraf, dan otot. Senyawa ini ditemukan dalam berbagai tingkat di banyak makanan, terutama buah-buahan dan sayuran. Penting untuk memiliki keseimbangan kalium yang tepat dalam darah, dan kadar umumnya harus tetap antara 3,5 dan 5,0 milliequivalent per liter (mEq/L).</p>
+</blockquote></li>
+<li><p>Hemoglobin (kadar hemoglobin)</p>
+<blockquote class="blockquote">
+<p>hemo in gms</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Hemoglobin adalah protein dalam sel darah merah yang berperan penting dalam mengangkut oksigen dari paru-paru ke seluruh tubuh dan membawa karbon dioksida kembali ke paru-paru untuk dikeluarkan. Pengambilan data sel darah putih dapat dilakukan dengan 2 cara yaitu Tes Darah Rutin(Complete Blood Count/CBC) dan Uji Hematokrit. Kadar hemoglobin normal pada wanita dewasa berkisar antara 12–15 g/dL, sedangkan kadar hemoglobin pada pria dewasa berkisar antara 13–17 g/dL.</p>
+</blockquote></li>
+<li><p>Packed Cell Volume (volume sel darah merah dalam darah)</p>
+<blockquote class="blockquote">
+<p>Packed Cell Volume (PCV), juga dikenal sebagai Hematocrit, adalah ukuran persentase volume darah yang terdiri dari sel-sel darah merah. Meskipun PCV umumnya bukan fitur utama dalam klasifikasi penyakit ginjal kronis (PGK), perubahan dalam PCV dapat memberikan indikasi tentang kondisi kesehatan secara keseluruhan, termasuk kemungkinan dampak PGK terhadap produksi sel darah merah. Pengambilan data sel darah putih dapat dilakukan dengan 3 cara yaitu, Pengambilan Sampel Darah, Sentrifugasi, dan Pengukuran PCV. Rentang nilai normal PCV dapat bervariasi tergantung pada usia, jenis kelamin, dan faktor lainnya. Sebagai contoh, nilai normal PCV pada orang dewasa pria biasanya berkisar antara 38% hingga 52%, sementara pada wanita berkisar antara 33% hingga 47%.</p>
+</blockquote></li>
+<li><p>White Blood Cell Count (jumlah sel darah putih)</p>
+<blockquote class="blockquote">
+<p>wc in cells/cumm</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Jumlah sel darah putih (leukosit) dalam darah memberikan informasi tentang respons sistem kekebalan tubuh terhadap infeksi atau peradangan yang dapat terkait dengan PGK. Pengambilan data sel darah putih dapat dilakukan dengan cara Tes Darah Rutin (Complete Blood Count/CBC). Jumlah sel darah putih yang normal adalah sekitar 5.000 – 10.000/cumm.</p>
+</blockquote></li>
+<li><p>Red Blood Cell Count (jumlah sel darah merah)</p>
+<blockquote class="blockquote">
+<p>rc in millions/cmm</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Red Blood Cell Count (RBC count) adalah pengukuran jumlah sel darah merah dalam satu volume tertentu dari darah. Pengukuran RBC count dapat memberikan informasi penting tentang kondisi kesehatan, termasuk kemungkinan adanya masalah ginjal. Dalam konteks penyakit ginjal kronis (PGK), perubahan pada RBC count dapat mencerminkan gangguan fungsi ginjal atau kondisi medis terkait. Pengambilan data sel darah merah dapat dilakukan dengan cara Tes Darah Rutin (Complete Blood Count/CBC). Jumlah sel darah merah normal berdasarkan rentang umur dan jenis kelamin sebagai berikut :</p>
+</blockquote>
+<ul>
+<li>Pria: 4,7 – 6,1 juta per mikroliter darah</li>
+<li>Wanita: 4,2 – 5,4 juta per mikroliter darah</li>
+<li>Anak-anak: 4 – 5,5 juta per mikroliter darah</li>
+</ul></li>
+<li><p>Hypertension (hipertensi)</p>
+<blockquote class="blockquote">
+<p>htn - (yes,no)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Hipertensi atau tekanan darah tinggi adalah salah satu faktor risiko utama untuk perkembangan penyakit ginjal kronis (PGK). Kondisi ini dapat merusak pembuluh darah di ginjal dan menyebabkan kerusakan ginjal secara bertahap. Oleh karena itu, hipertensi sering diidentifikasi sebagai fitur atau faktor dalam klasifikasi penyakit ginjal kronis. Pengambilan data hipertensi dapat dilakukan dengan 3 cara yaitu, Pengukuran Tekanan Darah, Minoritas Tekanan Darah Berkala, dan Rekam Medis. Untuk penjelasan hipertensi dikatakan yes dan no sebagai berikut :</p>
+</blockquote>
+<ul>
+<li><p>yes : Jika tekanan darah pasien consistently (secara konsisten) berada di atas ambang batas normal (umumnya diukur sebagai 130/80 mmHg atau lebih tinggi), ini dapat dianggap sebagai indikasi hipertensi.</p></li>
+<li><p>no : Jika tekanan darah pasien consistently (secara konsisten) berada di dibawah ambang batas normal (kurang dari 130/80 mmHg), ini dapat dianggap sebagai tidak terindikasi hipertensi.</p></li>
+</ul></li>
+<li><p>Diabetes Mellitus(keberadaan diabetes melitus)</p>
+<blockquote class="blockquote">
+<p>dm - (yes,no)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Diabetes adalah penyakit kronis yang ditandai dengan tingginya kadar gula darah. Glukosa merupakan sumber energi utama bagi sel tubuh manusia. Akan tetapi, pada penderita diabetes, glukosa tersebut tidak dapat digunakan oleh tubuh. Pengambilan data hipertensi dapat dilakukan dengan 2 cara yaitu, Tes Glukosa Darah dan Riwayat Kesehatan. Untuk penjelasan Diabetes Melitus dikatakan yes dan no sebagai berikut :</p>
+</blockquote>
+<ul>
+<li><p>yes : jika seseorang memiliki riwayat Diabetes Mellitus, hasil tes glukosa darah atau HbA1c yang positif, atau sedang menjalani pengobatan untuk diabetes mellitus, maka dapat dikategorikan sebagai “Yes” untuk diabetes mellitus.</p></li>
+<li><p>no : Jika seseorang tidak memiliki riwayat diabetes mellitus, hasil tes glukosa darah dalam kisaran normal, dan tidak sedang menjalani pengobatan untuk diabetes mellitus, maka dapat dikategorikan sebagai “No” untuk diabetes mellitus.</p></li>
+</ul></li>
+<li><p>Coronary Artery Disease (keberadaan penyakit arteri koroner)</p>
+<blockquote class="blockquote">
+<p>cad - (yes,no)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Coronary Artery Disease (CAD) atau penyakit arteri koroner adalah suatu kondisi dimana pembuluh darah koroner yang memasok darah ke jantung mengalami penyempitan atau pemblokiran. Meskipun secara langsung tidak termasuk dalam klasifikasi penyakit ginjal kronis (PGK), tetapi PGK dan CAD seringkali saling terkait dan memiliki faktor risiko bersama seperti diabetes, hipertensi, dan gangguan metabolisme lipid. Pengambilan data Coronary Artery Disease dapat dilakukan dengan melalui Riwayat Medis. Untuk penjelasan Coronary Artery Disease dikatakan yes dan no sebagai berikut :</p>
+</blockquote>
+<ul>
+<li><p>yes : Jika data menunjukkan adanya CAD, ini berarti bahwa pasien memiliki kondisi penyakit arteri koroner yang perlu dievaluasi dan dielola secara khusus.</p></li>
+<li><p>no : Jika data menunjukkan tidak adanya CAD, ini berarti bahwa pasien tidak memiliki penyakit arteri koroner berdasarkan informasi yang diperoleh.</p></li>
+</ul></li>
+<li><p>Appetite (kondisi nafsu makan)</p>
+<blockquote class="blockquote">
+<p>appet - (good,poor)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Nafsu makan (appetite) dapat dipengaruhi oleh penyakit ginjal kronis (PGK) dan memiliki dampak yang signifikan pada kesehatan pasien, salah satunya dampaknya yaitu penurunan nafsu makan. Pengambilan data Appetite dapat dilakukan dengan 3 cara yaitu Pengamatan klinis, Wawancara Pasien, dan Penggunaan Kuesioner. Untuk penjelasan appetite dikatakan good dan poor sebagai berikut :</p>
+</blockquote>
+<ul>
+<li><p>good : Pasien dengan nafsu makan yang baik, pola makan yang memadai, dan pertahankan berat badan yang normal mungkin memiliki status nutrisi yang baik. Ini dapat menunjukkan bahwa PGK mereka mungkin masih dalam tahap awal atau lebih terkontrol.</p></li>
+<li><p>poor : Pasien dengan penurunan nafsu makan, kehilangan berat badan yang signifikan, atau masalah nutrisi lainnya mungkin mengalami dampak lebih serius dari PGK. Kondisi ini dapat disebabkan oleh beberapa faktor, termasuk komplikasi PGK, efek samping dari pengobatan, atau penyakit lain yang terkait.</p></li>
+</ul></li>
+<li><p>Pedal Edema (keberadaan edema pada kaki)</p>
+<blockquote class="blockquote">
+<p>pe - (yes,no)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Pedal edema merupakan suatu kondisi di mana terjadi penumpukan cairan di daerah pergelangan kaki atau bagian bawah tungkai. Edema seringkali menjadi gejala yang terkait dengan penyakit ginjal kronis (PGK) karena ginjal yang tidak berfungsi dengan baik mungkin gagal menyaring dan mengeluarkan cairan yang cukup dari tubuh. Pengambilan data Pedal edema dapat dilakukan dengan cara Pemeriksaan fisik. Untuk penjelasan Pedal Edma dikatakan yes dan no sebagai berikut :</p>
+</blockquote>
+<ul>
+<li><p>yes : Pedal edema terlihat atau terkonfirmasi melalui pemeriksaan fisik atau catatan pasien. Pembengkakan yang terlihat di daerah pergelangan kaki atau kaki dapat dianggap sebagai tanda pedal edema yang positif.</p></li>
+<li><p>no :Tidak ada tanda atau gejala edema yang terdeteksi pada pemeriksaan fisik atau melalui informasi yang diberikan oleh pasien. Pembengkakan tidak terjadi atau tidak dapat diidentifikasi.</p></li>
+</ul></li>
+<li><p>Anemia (keberadaan anemia)</p>
+<blockquote class="blockquote">
+<p>ane - (yes,no)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Anemia, atau kekurangan sel darah merah atau hemoglobin dalam darah, dapat terjadi pada penyakit ginjal kronis (PGK). Ginjal memiliki peran penting dalam pembentukan eritropoietin, hormon yang merangsang produksi sel darah merah dalam sumsum tulang. Gangguan pada ginjal dapat menyebabkan penurunan produksi eritropoietin dan berkontribusi pada perkembangan anemia pada pasien dengan PGK. Pengambilan data Anemia dapat dilakukan dengan cara 2 cara yaitu Tes Hemoglobin dan Hitung Jumlah Sel Darah Merah (RBC). Untuk penjelasan Anemia dikatakan yes dan no sebagai berikut :</p>
+</blockquote>
+<ul>
+<li><p>yes : jika hasil tes menunjukkan kadar hemoglobin yang rendah, hitung sel darah merah yang rendah, atau kadar zat besi yang rendah, ini dapat mengindikasikan adanya anemia yang terkait dengan penyakit ginjal kronis.</p></li>
+<li><p>no : Jika hasil tes menunjukkan kadar hemoglobin, hitung sel darah merah, dan kadar zat besi dalam kisaran normal, maka pasien mungkin tidak mengalami anemia yang terkait dengan PGK.</p></li>
+</ul></li>
+<li><p>Class (klasifikasi penyakit ginjal kronis)</p>
+<blockquote class="blockquote">
+<p>class - (ckd,notckd)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Data bisa diperoleh dari diagnosis medis atau hasil tes medis yang relevan.</p>
+</blockquote></li>
+</ol>
+<p><strong>Visualisasi Data</strong></p>
+<div class="cell" data-outputid="22b45c4a-8e93-4504-d8b5-446c986e5622" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># df adalah DataFrame Anda</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ganti dengan data sesuai kebutuhan Anda</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Menentukan jumlah kolom yang ingin ditampilkan</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>num_cols <span class="op">=</span> <span class="bu">min</span>(<span class="dv">26</span>, <span class="bu">len</span>(df.columns))  <span class="co"># Maksimal menampilkan 25 kolom</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Menentukan jumlah baris dan kolom untuk tata letak subplot</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>num_rows <span class="op">=</span> (num_cols <span class="op">//</span> <span class="dv">3</span>) <span class="op">+</span> <span class="bu">int</span>(num_cols <span class="op">%</span> <span class="dv">3</span> <span class="op">!=</span> <span class="dv">0</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Menentukan ukuran gambar</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(num_rows, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, num_rows <span class="op">*</span> <span class="dv">3</span>))</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Melakukan loop untuk membuat histogram untuk setiap kolom</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_rows):</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>        col_index <span class="op">=</span> i <span class="op">*</span> <span class="dv">3</span> <span class="op">+</span> j</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> col_index <span class="op">&lt;</span> num_cols:</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>            df[df.columns[col_index]].hist(ax<span class="op">=</span>axes[i, j], bins<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>            axes[i, j].set_title(df.columns[col_index])</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Menyesuaikan tata letak</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>UserWarning: Glyph 9 (  ) missing from current font.
+  plt.tight_layout()
+/usr/local/lib/python3.10/dist-packages/IPython/core/pylabtools.py:151: UserWarning: Glyph 9 (  ) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Chronic_Kidney_Disease_files/figure-html/cell-7-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="mengidentifikasi-missing-value" class="level3" data-number="1.2.5">
+<h3 data-number="1.2.5" class="anchored" data-anchor-id="mengidentifikasi-missing-value"><span class="header-section-number">1.2.5</span> Mengidentifikasi missing value</h3>
+<p>Missing value, atau nilai yang hilang, merujuk pada keadaan di mana suatu variabel dalam data tidak memiliki nilai atau informasi yang tersedia. Keberadaan missing value dapat disebabkan oleh berbagai faktor, seperti kesalahan pengukuran, kelalaian dalam pengumpulan data, atau sengaja diabaikan. Dalam analisis data, penanganan yang tepat terhadap missing value penting karena dapat memengaruhi keakuratan dan interpretasi hasil analisis. Metode penanganan missing value melibatkan strategi seperti penghapusan data yang hilang, imputasi nilai (pengisian nilai yang hilang), atau teknik lain yang sesuai dengan karakteristik data dan tujuan analisis.</p>
+<div class="cell" data-outputid="29b0a4a4-c999-4dee-fefd-a2a9c09a25e6" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Menghitung apakah ada nilai yang hilang dalam setiap kolom</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>missing_values <span class="op">=</span> df.isna().<span class="bu">any</span>()</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Menampilkan hasil</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Apakah ada nilai yang hilang dalam setiap kolom:"</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(missing_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Apakah ada nilai yang hilang dalam setiap kolom:
+id                False
+age                True
+bp                 True
+sg                 True
+al                 True
+su                 True
+rbc                True
+pc                 True
+pcc                True
+ba                 True
+bgr                True
+bu                 True
+sc                 True
+sod                True
+pot                True
+hemo               True
+pcv                True
+wc                 True
+rc                 True
+htn                True
+dm                 True
+cad                True
+appet              True
+pe                 True
+ane                True
+classification    False
+dtype: bool</code></pre>
+</div>
+</div>
+<p>Noted : Terdapat <em>missing value</em> pada data</p>
+<p>Jumlah <em>missing value</em> pada tiap data</p>
+<div class="cell" data-outputid="b5b2073b-9d58-4352-cf27-383b57bd7dc5" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>missing_values <span class="op">=</span> df.isnull().<span class="bu">sum</span>()</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jumlah Missing Values dalam Setiap Kolom:"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(missing_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Jumlah Missing Values dalam Setiap Kolom:
+id                  0
+age                 9
+bp                 12
+sg                 47
+al                 46
+su                 49
+rbc               152
+pc                 65
+pcc                 4
+ba                  4
+bgr                44
+bu                 19
+sc                 17
+sod                87
+pot                88
+hemo               52
+pcv                70
+wc                105
+rc                130
+htn                 2
+dm                  2
+cad                 2
+appet               1
+pe                  1
+ane                 1
+classification      0
+dtype: int64</code></pre>
+</div>
+</div>
+<p>Terdapat banyak sekali missing value hampir di semua fitur. Untuk mengatasi hal tersebut perlu dilakukan pengisian data terhadap missing value dengan menggunakan mean atau rata-rata</p>
+</section>
+<section id="duplikat-data" class="level3" data-number="1.2.6">
+<h3 data-number="1.2.6" class="anchored" data-anchor-id="duplikat-data"><span class="header-section-number">1.2.6</span> Duplikat data</h3>
+<p>Duplikat data merujuk pada keberadaan entri atau baris data yang identik atau serupa dalam dataset. Duplikasi data bisa terjadi karena beberapa sebab, seperti kesalahan input, duplikasi data saat penggabungan dataset, atau kesalahan dalam proses pengumpulan data. Identifikasi dan penanganan duplikat data penting dalam analisis data karena bisa memengaruhi hasil secara tidak akurat, serta dapat memengaruhi kebijakan atau keputusan yang diambil berdasarkan data tersebut. Proses penanganan duplikat dapat melibatkan penghapusan baris yang sama atau mengkonsolidasikan informasi dari entri yang duplikat.</p>
+<div class="cell" data-outputid="33ecf670-dba3-45e5-ddad-9c0bafcc3007" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>jumlah_duplikat <span class="op">=</span> df.duplicated().<span class="bu">sum</span>()</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Menampilkan jumlah data yang duplikat</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jumlah data yang duplikat:"</span>, jumlah_duplikat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Jumlah data yang duplikat: 0</code></pre>
+</div>
+</div>
+<p>Noted : <strong>tidak terdapat</strong> beberapa baris data yang sama, sehingga data tersebut <strong>tidak perlu</strong> dihilangkan untuk menghindari adanya data yang redundan</p>
+</section>
+<section id="mengidentifikasi-karakter-khusus" class="level3" data-number="1.2.7">
+<h3 data-number="1.2.7" class="anchored" data-anchor-id="mengidentifikasi-karakter-khusus"><span class="header-section-number">1.2.7</span> Mengidentifikasi Karakter Khusus</h3>
+<p>Identifikasi karakter khusus adalah proses mengenali dan memahami keberadaan karakter yang tidak umum atau khusus dalam suatu dataset. Karakter khusus dapat termasuk simbol-simbol tertentu, spasi yang tidak terlihat, atau karakter lain yang tidak sesuai dengan format atau tipe data yang diharapkan.</p>
+<div class="cell" data-outputid="2a6b554d-8bd4-4640-c98d-04dc24e073d2" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop melalui setiap kolom dan cek nilai unik untuk mendeteksi karakter khusus</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> column <span class="kw">in</span> df.columns:</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    unique_values <span class="op">=</span> df[column].unique()</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Tampilkan nama kolom dan nilai unik yang mengandung karakter khusus</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> value <span class="kw">in</span> unique_values:</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(value, <span class="bu">str</span>) <span class="kw">and</span> (<span class="bu">any</span>(<span class="kw">not</span> c.isalnum() <span class="kw">and</span> <span class="kw">not</span> c.isspace() <span class="cf">for</span> c <span class="kw">in</span> value) <span class="kw">or</span> <span class="st">'</span><span class="ch">\t</span><span class="st">'</span> <span class="kw">in</span> value):</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Kolom '</span><span class="sc">{</span>column<span class="sc">}</span><span class="ss">': Karakter khusus terdeteksi - '</span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Kolom 'pcv': Karakter khusus terdeteksi - ' ?'
+Kolom 'pcv': Karakter khusus terdeteksi - ' 43'
+Kolom 'wc': Karakter khusus terdeteksi - '  6200'
+Kolom 'wc': Karakter khusus terdeteksi - '  8400'
+Kolom 'wc': Karakter khusus terdeteksi - '  ?'
+Kolom 'rc': Karakter khusus terdeteksi - '5.2'
+Kolom 'rc': Karakter khusus terdeteksi - '3.9'
+Kolom 'rc': Karakter khusus terdeteksi - '4.6'
+Kolom 'rc': Karakter khusus terdeteksi - '4.4'
+Kolom 'rc': Karakter khusus terdeteksi - '4.0'
+Kolom 'rc': Karakter khusus terdeteksi - '3.7'
+Kolom 'rc': Karakter khusus terdeteksi - '3.8'
+Kolom 'rc': Karakter khusus terdeteksi - '3.4'
+Kolom 'rc': Karakter khusus terdeteksi - '2.6'
+Kolom 'rc': Karakter khusus terdeteksi - '2.8'
+Kolom 'rc': Karakter khusus terdeteksi - '4.3'
+Kolom 'rc': Karakter khusus terdeteksi - '3.2'
+Kolom 'rc': Karakter khusus terdeteksi - '3.6'
+Kolom 'rc': Karakter khusus terdeteksi - '4.1'
+Kolom 'rc': Karakter khusus terdeteksi - '4.9'
+Kolom 'rc': Karakter khusus terdeteksi - '2.5'
+Kolom 'rc': Karakter khusus terdeteksi - '4.2'
+Kolom 'rc': Karakter khusus terdeteksi - '4.5'
+Kolom 'rc': Karakter khusus terdeteksi - '3.1'
+Kolom 'rc': Karakter khusus terdeteksi - '4.7'
+Kolom 'rc': Karakter khusus terdeteksi - '3.5'
+Kolom 'rc': Karakter khusus terdeteksi - '6.0'
+Kolom 'rc': Karakter khusus terdeteksi - '5.0'
+Kolom 'rc': Karakter khusus terdeteksi - '2.1'
+Kolom 'rc': Karakter khusus terdeteksi - '5.6'
+Kolom 'rc': Karakter khusus terdeteksi - '2.3'
+Kolom 'rc': Karakter khusus terdeteksi - '2.9'
+Kolom 'rc': Karakter khusus terdeteksi - '2.7'
+Kolom 'rc': Karakter khusus terdeteksi - '8.0'
+Kolom 'rc': Karakter khusus terdeteksi - '3.3'
+Kolom 'rc': Karakter khusus terdeteksi - '3.0'
+Kolom 'rc': Karakter khusus terdeteksi - '2.4'
+Kolom 'rc': Karakter khusus terdeteksi - '4.8'
+Kolom 'rc': Karakter khusus terdeteksi - '  ?'
+Kolom 'rc': Karakter khusus terdeteksi - '5.4'
+Kolom 'rc': Karakter khusus terdeteksi - '6.1'
+Kolom 'rc': Karakter khusus terdeteksi - '6.2'
+Kolom 'rc': Karakter khusus terdeteksi - '6.3'
+Kolom 'rc': Karakter khusus terdeteksi - '5.1'
+Kolom 'rc': Karakter khusus terdeteksi - '5.8'
+Kolom 'rc': Karakter khusus terdeteksi - '5.5'
+Kolom 'rc': Karakter khusus terdeteksi - '5.3'
+Kolom 'rc': Karakter khusus terdeteksi - '6.4'
+Kolom 'rc': Karakter khusus terdeteksi - '5.7'
+Kolom 'rc': Karakter khusus terdeteksi - '5.9'
+Kolom 'rc': Karakter khusus terdeteksi - '6.5'
+Kolom 'dm': Karakter khusus terdeteksi - '  no'
+Kolom 'dm': Karakter khusus terdeteksi - '  yes'
+Kolom 'cad': Karakter khusus terdeteksi - ' no'
+Kolom 'classification': Karakter khusus terdeteksi - 'ckd   '</code></pre>
+</div>
+</div>
+<p>Noted : Diperoleh terdapat beberpa kolom yang memiliki karakter khusus tab (‘) pada kolom ’pcv’, ‘wc’, ‘rc’, ‘dm’, dan ‘cad’ dan juga terdapat kesalahan konversi tipe data pada kolom ‘rc’</p>
+</section>
+<section id="mengidentifikasi-outlier" class="level3" data-number="1.2.8">
+<h3 data-number="1.2.8" class="anchored" data-anchor-id="mengidentifikasi-outlier"><span class="header-section-number">1.2.8</span> Mengidentifikasi Outlier</h3>
+<p>Outlier Pada Data adalah nilai yang berbeda dari yang lain dimana perbedaannya sangat jauh dengan sekumpulan data yang lain dalam satu kolom.Keberadaan Outlier sendiri dinilai dapat mengganggu analisis statistik dan kesimpulan yang diambil dari data karena mereka bisa menyebabkan pergeseran rata-rata atau mengganggu distribusi data secara keseluruhan. Maka dari itu, pada data penyakit ginjal kronis ini perlu dilakukan identifikasi outlier pada data. Untuk menentukan outlier pada data dapat dengan menggunakan metode Local Outlier Factor.</p>
+<p><strong>LOCAL OUTLIER FACTOR</strong></p>
+<hr>
+<p>Adalah metode yang digunakan untuk mendeteksi outlier dalam data dengan memperhatikan konteks lokal dari setiap data poin. LOF menghitung seberapa “aneh” atau tidak biasa suatu poin data jika dibandingkan dengan tetangga-tetangganya. Poin yang memiliki LOF tinggi dibandingkan dengan tetangganya dapat dianggap sebagai outlier.</p>
+<p>Adapun tahap-tahp untuk mengidentifikasi outlier pada data dengan menggunakan Local Outlier Factor :</p>
+<ol type="1">
+<li><p>Hitung Jarak Antar Data dimana jarak yang dihitung adalah jarak titik yang akan dievaluasi dengan semua titik didalam satu baris. Perhitungan Jarak dilakukan menggunakan perhitungan jarak euclidean. <span class="math display">\[
+\text{distance}(p, q) = \sqrt{\sum_{i=1}^{n}(p_i - q_i)^2}
+\]</span> dimana : p = titik yang akan dievaluasi q = titik selain titik p</p></li>
+<li><p>Hitung Kepadatan Lokal Setelah jarak diketahui, maka selanjutnya kepadatan lokal dari titik data tersebut perlu dihitung. Kepadatan lokal dapat dihitung dengan membandingkan jumlah titik-titik tetangga dalam jarak tertentu (radius) terhadap titik data yang sedang dievaluasi. <span class="math display">\[
+\text{Local Density}(p) = \frac{\text{jumlah tetangga dalam radius}}{\text{jumlah total data}}
+\]</span></p></li>
+<li><p>Hitung Local Reachability Density(LRD) Hitung kepadatan jarak (reachability distance) dari titik data (p) terhadap tetangganya (q). Local Reachability Density dari titik p terhadap tetangga q dihitung sebagai rata-rata dari jarak antara q dan p terhadap tetangga q: <span class="math display">\[
+\text{reachdist}(p, q) = \max(\text{distance}(p, q), \text{radius})
+\]</span></p></li>
+</ol>
+<p><span class="math display">\[
+\text{Local Reachability Density}(p) = \frac{1}{\text{jumlah tetangga}} \sum_{q \in N_{\text{radius}}(p)} \frac{\text{reachdist}(p, q)}{\text{density}(q)}
+\]</span></p>
+<p>dimana: - N radius(p) adalah himpunan tetangga dalam radius tertentu radius dari titik p. - density(q) adalah kepadatan lokal dari tetangga q.</p>
+<ol start="4" type="1">
+<li>Hitung Nilai LOF LOF dari suatu titik data (p) dihitung sebagai rasio dari rata-rata Local Reachability Density dari tetangganya terhadap kepadatan lokalnya sendiri: <span class="math display">\[
+\text{LOF}(p) = \frac{1}{\text{jumlah tetangga}} \sum_{q \in N_{\text{radius}}(p)} \frac{\text{Local Reachability Density}(q)}{\text{Local Reachability Density}(p)}
+\]</span></li>
+</ol>
+<p>dimana : LOF yang tinggi menunjukkan bahwa titik tersebut memiliki kepadatan lokal yang lebih rendah dibandingkan dengan tetangganya, sehingga cenderung menjadi outlier.</p>
+<p>Contoh Kasus, untuk mencari outlier pada data misalkan terdapat tabel seperti dibawah ini:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>Y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Langkah 1 : Hitung Jarak Antar Data lalu nilai radius yang diambil adalah 5</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>Y</th>
+<th>Jarak</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4</td>
+<td>1,41 ; 4,47 ; 4,47</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+<td>1,41 ; 3,16</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>8</td>
+<td>4,47</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>2</td>
+<td>4,47 ; 3,16 ; 4,24</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>5</td>
+<td>4,24</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Langkah 2 : Hitung jumlah tetangga dalam radius 5</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>Y</th>
+<th>Jumlah Tetangga</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>8</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>5</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Langkah 3 : Hitung Local Reachability Density</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>Y</th>
+<th>Jarak</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4</td>
+<td>(1,41 + 4,47 + 4,47) / 3 = 3,45</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+<td>(1,41 + 3,16) /2 = 2,285</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>8</td>
+<td>4,47</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>2</td>
+<td>(4,47 + 3,16 + 4,24) / 3 = 3,95</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>5</td>
+<td>4,24</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Langkah 4 : Menghitung nilai LOF data</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>Y</th>
+<th>LOF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4</td>
+<td>(1/3,45) x ((2,285 + 4,47 + 3,95) / 3) = 1,03</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+<td>(1/2,285) x ((3,45 + 3,95) / 2) = 1,61</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>8</td>
+<td>(1/4,47) x ((3,45)) = 0,77</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>2</td>
+<td>(1/3,95) x ((3,45 + 2,285 + 4,24) / 3) = 0,83</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>5</td>
+<td>(1/4,24) x ((3,95)) = 0.936</td>
+</tr>
+</tbody>
+</table>
+<p>Dengan begitu, nilai yang berkemungkinan menjadi outlier adalah baris 2 dan baris 1</p>
+<p>Inter Pretasi Local Outlier Factor :</p>
+<ul>
+<li>Jika LOF &gt; 1, itu menunjukkan bahwa kepadatan lokal dari titik p lebih rendah daripada rata-rata kepadatan lokal dari tetangganya. Artinya, titik tersebut memiliki sifat yang “aneh” atau berbeda dari lingkungan sekitarnya dan cenderung menjadi outlier.</li>
+<li>Jika LOF ≈ 1, itu menunjukkan bahwa kepadatan lokal dari titik p mirip dengan rata-rata kepadatan lokal tetangganya.</li>
+<li>Jika LOF &lt; 1, itu menunjukkan bahwa kepadatan lokal dari titik p lebih tinggi daripada rata-rata kepadatan lokal dari tetangganya, sehingga cenderung menjadi titik yang tidak aneh.</li>
+</ul>
+<div class="cell" data-outputid="c4729beb-157f-40e7-a7b6-e5063b485fde" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.impute <span class="im">import</span> SimpleImputer</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> LocalOutlierFactor</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Membagi data menjadi numerik dan kategorikal</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>numerical_cols <span class="op">=</span> df.select_dtypes(include<span class="op">=</span>[<span class="st">'int'</span>, <span class="st">'float'</span>]).columns</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>categorical_cols <span class="op">=</span> df.select_dtypes(include<span class="op">=</span><span class="st">'object'</span>).columns</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Menggunakan SimpleImputer untuk mengisi nilai yang hilang dengan mean (dapat disesuaikan)</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>imputer <span class="op">=</span> SimpleImputer(strategy<span class="op">=</span><span class="st">'mean'</span>)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>df[numerical_cols] <span class="op">=</span> imputer.fit_transform(df[numerical_cols])</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Label Encoding untuk kolom kategorikal</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> LabelEncoder</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>label_encoder <span class="op">=</span> LabelEncoder()</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>df[categorical_cols] <span class="op">=</span> df[categorical_cols].<span class="bu">apply</span>(<span class="kw">lambda</span> col: label_encoder.fit_transform(col))</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Menggabungkan kolom numerik dan kategorikal</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>selected_data <span class="op">=</span> df[numerical_cols.union(categorical_cols)]</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalisasi df numerik</span></span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>selected_data[numerical_cols] <span class="op">=</span> scaler.fit_transform(selected_data[numerical_cols])</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat model LOF</span></span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> LocalOutlierFactor(n_neighbors<span class="op">=</span><span class="dv">20</span>)  <span class="co"># Jumlah tetangga yang digunakan</span></span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>outlier_scores <span class="op">=</span> clf.fit_predict(selected_data)</span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Menampilkan indeks outlier</span></span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>outlier_indices <span class="op">=</span> np.where(outlier_scores <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>)[<span class="dv">0</span>]</span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Indeks outlier:"</span>, outlier_indices)</span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jumlah outlier:"</span>, <span class="bu">len</span>(outlier_indices))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Indeks outlier: [ 21  61  65  66  73  88 106 141 148 175 197 214 230 235 249 255 295 302
+ 349]
+Jumlah outlier: 19</code></pre>
+</div>
+</div>
+<p>Noted : Terdapat outlier berjumlah 19 outlier.</p>
+<p><strong>Kesimpulan :</strong> 1. Data memiliki missing values 2. Data tidak memiliki data redundan 3. Terdapat karakter khusus pada data dan kesalahan konversi tipe data 3. Data memiliki outlier berjumlah 19 4. Perbandingan proporsi data tiap target tidak terlalu jauh sehingga tidak perlu di seimbangkan menggunakan metode UnderSampling</p>
+</section>
+</section>
+<section id="data-preprocessing" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="data-preprocessing"><span class="header-section-number">1.3</span> 3. Data Preprocessing</h2>
+<p>Tahap preprocessing adalah tahapan untuk mempersiapkan data sebelum dilakukan pembuatan model. Pada tahap preprocessing, data akan dibersihkan, diubah, dan disesuaikan agar data sesuai dengan kebutuhan pada model machine learning yang akan digunakan. Tahap preprocessing merupakan langkah-langkah untuk membersihkan dan menyiapkan data sebelum memasukkan ke dalam model.</p>
+<hr>
+<p>Setelah memahami data, akan dilakukan tahap preprocessing untuk menangani masalah pada data yang sudah didefinisikan pada Data Understanding, yakni. 1. Menghapus karakter khusus dan mengubah kesalahan konversi tipe data 2. Mengisi data missing value 3. menghapus Outlier</p>
+<p>Setelah data siap, akan dilakukan : 1. Skoring tiap fitur kembali 2. Normalisasi Data 3. Eksplorasi Model</p>
+<div class="cell" data-outputid="e35b167b-eded-4b11-f863-411ba1766cb3" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'kidney_disease.csv'</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+
+  <div id="df-3abae22b-3055-4ba0-beaa-130bcb82d543" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">bp</th>
+<th data-quarto-table-cell-role="th">sg</th>
+<th data-quarto-table-cell-role="th">al</th>
+<th data-quarto-table-cell-role="th">su</th>
+<th data-quarto-table-cell-role="th">rbc</th>
+<th data-quarto-table-cell-role="th">pc</th>
+<th data-quarto-table-cell-role="th">pcc</th>
+<th data-quarto-table-cell-role="th">ba</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">pcv</th>
+<th data-quarto-table-cell-role="th">wc</th>
+<th data-quarto-table-cell-role="th">rc</th>
+<th data-quarto-table-cell-role="th">htn</th>
+<th data-quarto-table-cell-role="th">dm</th>
+<th data-quarto-table-cell-role="th">cad</th>
+<th data-quarto-table-cell-role="th">appet</th>
+<th data-quarto-table-cell-role="th">pe</th>
+<th data-quarto-table-cell-role="th">ane</th>
+<th data-quarto-table-cell-role="th">classification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>48.0</td>
+<td>80.0</td>
+<td>1.020</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>normal</td>
+<td>notpresent</td>
+<td>notpresent</td>
+<td>...</td>
+<td>44</td>
+<td>7800</td>
+<td>5.2</td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+<td>good</td>
+<td>no</td>
+<td>no</td>
+<td>ckd</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>7.0</td>
+<td>50.0</td>
+<td>1.020</td>
+<td>4.0</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>normal</td>
+<td>notpresent</td>
+<td>notpresent</td>
+<td>...</td>
+<td>38</td>
+<td>6000</td>
+<td>NaN</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>good</td>
+<td>no</td>
+<td>no</td>
+<td>ckd</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2</td>
+<td>62.0</td>
+<td>80.0</td>
+<td>1.010</td>
+<td>2.0</td>
+<td>3.0</td>
+<td>normal</td>
+<td>normal</td>
+<td>notpresent</td>
+<td>notpresent</td>
+<td>...</td>
+<td>31</td>
+<td>7500</td>
+<td>NaN</td>
+<td>no</td>
+<td>yes</td>
+<td>no</td>
+<td>poor</td>
+<td>no</td>
+<td>yes</td>
+<td>ckd</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>3</td>
+<td>48.0</td>
+<td>70.0</td>
+<td>1.005</td>
+<td>4.0</td>
+<td>0.0</td>
+<td>normal</td>
+<td>abnormal</td>
+<td>present</td>
+<td>notpresent</td>
+<td>...</td>
+<td>32</td>
+<td>6700</td>
+<td>3.9</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+<td>poor</td>
+<td>yes</td>
+<td>yes</td>
+<td>ckd</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>4</td>
+<td>51.0</td>
+<td>80.0</td>
+<td>1.010</td>
+<td>2.0</td>
+<td>0.0</td>
+<td>normal</td>
+<td>normal</td>
+<td>notpresent</td>
+<td>notpresent</td>
+<td>...</td>
+<td>35</td>
+<td>7300</td>
+<td>4.6</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>good</td>
+<td>no</td>
+<td>no</td>
+<td>ckd</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>5 rows × 26 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-3abae22b-3055-4ba0-beaa-130bcb82d543')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-3abae22b-3055-4ba0-beaa-130bcb82d543 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-3abae22b-3055-4ba0-beaa-130bcb82d543');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-01069a11-a41c-4539-9f93-d85a94e363bc">
+  <button class="colab-df-quickchart" onclick="quickchart('df-01069a11-a41c-4539-9f93-d85a94e363bc')" title="Suggest charts" style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-01069a11-a41c-4539-9f93-d85a94e363bc button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="cell" data-outputid="74cb6ca1-e068-45c5-b05d-fbf92c642332" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rincian dataset (banyak data dan kolom)</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya data : "</span>, df.shape[<span class="dv">0</span>])</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Banyaknya kolom : "</span>, df.shape[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Banyaknya data :  400
+Banyaknya kolom :  26</code></pre>
+</div>
+</div>
+<section id="cleaning-data" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="cleaning-data"><span class="header-section-number">1.3.1</span> Cleaning Data</h3>
+<p>Pembersihan data, atau data cleaning, adalah proses identifikasi, koreksi, atau penghapusan kesalahan dan ketidaksesuaian dalam dataset. Tujuan dari cleaning data adalah untuk memastikan bahwa data yang digunakan dalam analisis atau pemodelan adalah akurat, konsisten, dan siap digunakan.</p>
+<p><strong>Menghapus karakter khusus dan mengubah kesalahan konversi tipe data</strong></p>
+<p>Menghapus karakter tambahan([’]) dan spasi yang terdapat pada isi data tiap fitur</p>
+<div class="cell" data-outputid="d6a35e84-4222-4432-9c02-373c6a15ae4b" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Gantilah dengan path yang sesuai ke file CSV penyakit ginjal kronis</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop melalui kolom-kolom yang perlu dihandle</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>columns_to_handle <span class="op">=</span> [<span class="st">'pcv'</span>, <span class="st">'wc'</span>, <span class="st">'rc'</span>, <span class="st">'dm'</span>, <span class="st">'cad'</span>, <span class="st">'classification'</span>]</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> column <span class="kw">in</span> columns_to_handle:</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Mengganti '\t' dan spasi ekstra dengan string kosong</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    df[column] <span class="op">=</span> df[column].replace(<span class="vs">r'\t'</span>, <span class="st">''</span>, regex<span class="op">=</span><span class="va">True</span>).<span class="bu">str</span>.strip()</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Menangani karakter khusus pada kolom 'classification' (menghapus spasi ekstra)</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'classification'</span>] <span class="op">=</span> df[<span class="st">'classification'</span>].<span class="bu">str</span>.strip()</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Menangani karakter khusus pada kolom 'classification' (menghapus 'ckd\t')</span></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'classification'</span>] <span class="op">=</span> df[<span class="st">'classification'</span>].replace(<span class="st">'ckd</span><span class="ch">\t</span><span class="st">'</span>, <span class="st">'ckd'</span>, regex<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Konversi tipe df kolom 'rc' ke numerik, menggantikan nilai yang tidak dapat diubah</span></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'rc'</span>] <span class="op">=</span> pd.to_numeric(df[<span class="st">'rc'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> column <span class="kw">in</span> columns_to_handle:</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df[column].unique())</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['44' '38' '31' '32' '35' '39' '36' '33' '29' '28' nan '16' '24' '37' '30'
+ '34' '40' '45' '27' '48' '?' '52' '14' '22' '18' '42' '17' '46' '23' '19'
+ '25' '41' '26' '15' '21' '43' '20' '47' '9' '49' '50' '53' '51' '54']
+['7800' '6000' '7500' '6700' '7300' nan '6900' '9600' '12100' '4500'
+ '12200' '11000' '3800' '11400' '5300' '9200' '6200' '8300' '8400' '10300'
+ '9800' '9100' '7900' '6400' '8600' '18900' '21600' '4300' '8500' '11300'
+ '7200' '7700' '14600' '6300' '7100' '11800' '9400' '5500' '5800' '13200'
+ '12500' '5600' '7000' '11900' '10400' '10700' '12700' '6800' '6500'
+ '13600' '10200' '9000' '14900' '8200' '15200' '5000' '16300' '12400'
+ '10500' '4200' '4700' '10900' '8100' '9500' '2200' '12800' '11200'
+ '19100' '?' '12300' '16700' '2600' '26400' '8800' '7400' '4900' '8000'
+ '12000' '15700' '4100' '5700' '11500' '5400' '10800' '9900' '5200' '5900'
+ '9300' '9700' '5100' '6600']
+[5.2 nan 3.9 4.6 4.4 5.  4.  3.7 3.8 3.4 2.6 2.8 4.3 3.2 3.6 4.1 4.9 2.5
+ 4.2 4.5 3.1 4.7 3.5 6.  2.1 5.6 2.3 2.9 2.7 8.  3.3 3.  2.4 4.8 5.4 6.1
+ 6.2 6.3 5.1 5.8 5.5 5.3 6.4 5.7 5.9 6.5]
+['yes' 'no' nan]
+['no' 'yes' nan]
+['ckd' 'notckd']</code></pre>
+</div>
+</div>
+<p>Mengubah kesalahan konversi tipe data</p>
+<div class="cell" data-outputid="ce77618c-427d-4364-c7c5-1d4a496326d2" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>columns_to_convert <span class="op">=</span> [<span class="st">'pcv'</span>, <span class="st">'wc'</span>, <span class="st">'rc'</span>]</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> columns_to_convert:</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    df[col] <span class="op">=</span> pd.to_numeric(df[col], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df[col].unique())</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[44. 38. 31. 32. 35. 39. 36. 33. 29. 28. nan 16. 24. 37. 30. 34. 40. 45.
+ 27. 48. 52. 14. 22. 18. 42. 17. 46. 23. 19. 25. 41. 26. 15. 21. 43. 20.
+ 47.  9. 49. 50. 53. 51. 54.]
+[ 7800.  6000.  7500.  6700.  7300.    nan  6900.  9600. 12100.  4500.
+ 12200. 11000.  3800. 11400.  5300.  9200.  6200.  8300.  8400. 10300.
+  9800.  9100.  7900.  6400.  8600. 18900. 21600.  4300.  8500. 11300.
+  7200.  7700. 14600.  6300.  7100. 11800.  9400.  5500.  5800. 13200.
+ 12500.  5600.  7000. 11900. 10400. 10700. 12700.  6800.  6500. 13600.
+ 10200.  9000. 14900.  8200. 15200.  5000. 16300. 12400. 10500.  4200.
+  4700. 10900.  8100.  9500.  2200. 12800. 11200. 19100. 12300. 16700.
+  2600. 26400.  8800.  7400.  4900.  8000. 12000. 15700.  4100.  5700.
+ 11500.  5400. 10800.  9900.  5200.  5900.  9300.  9700.  5100.  6600.]
+[5.2 nan 3.9 4.6 4.4 5.  4.  3.7 3.8 3.4 2.6 2.8 4.3 3.2 3.6 4.1 4.9 2.5
+ 4.2 4.5 3.1 4.7 3.5 6.  2.1 5.6 2.3 2.9 2.7 8.  3.3 3.  2.4 4.8 5.4 6.1
+ 6.2 6.3 5.1 5.8 5.5 5.3 6.4 5.7 5.9 6.5]</code></pre>
+</div>
+</div>
+</section>
+<section id="mengisi-data-missing-value" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="mengisi-data-missing-value"><span class="header-section-number">1.3.2</span> Mengisi data missing value</h3>
+<p><strong>Melakukan transformasi data guna mempermudah untuk pengisian missing value.</strong></p>
+<p>Adapun ketentuannya sebagai berikut:</p>
+<pre><code>- rbc
+  - normal = 1
+  - abnormal = 0
+- pc
+  - normal = 1
+  - abnormal = 0
+- pcc
+  - present = 1
+  - notpresent = 0
+- ba
+  - present = 1
+  - notpresent = 0
+- htn
+  - yes = 1
+  - no = 0
+- dm
+  - yes = 1
+  - no = 0
+- cad
+  - yes = 1
+  - no = 0
+- appet
+  - good = 1
+  - poor = 0
+- pe
+  - yes = 1
+  - no = 0
+- ane
+  - yes = 1
+  - no = 0
+- classification
+  - ckd = 1
+  - notckd = 0</code></pre>
+<div class="cell" data-outputid="08912a4e-41af-46ae-9cab-0ed47c00c0a6" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Daftar kolom yang perlu diubah sesuai dengan aturan Anda</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>columns_to_convert <span class="op">=</span> [<span class="st">'rbc'</span>, <span class="st">'pc'</span>, <span class="st">'pcc'</span>, <span class="st">'ba'</span>, <span class="st">'htn'</span>, <span class="st">'dm'</span>, <span class="st">'cad'</span>, <span class="st">'appet'</span>, <span class="st">'pe'</span>, <span class="st">'ane'</span>, <span class="st">'classification'</span>]</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Aturan konversi sesuai dengan yang Anda sebutkan</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>conversion_rules <span class="op">=</span> {</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'rbc'</span>: {<span class="st">'normal'</span>: <span class="dv">1</span>, <span class="st">'abnormal'</span>: <span class="dv">0</span>},</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'pc'</span>: {<span class="st">'normal'</span>: <span class="dv">1</span>, <span class="st">'abnormal'</span>: <span class="dv">0</span>},</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'pcc'</span>: {<span class="st">'present'</span>: <span class="dv">1</span>, <span class="st">'notpresent'</span>: <span class="dv">0</span>},</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'ba'</span>: {<span class="st">'present'</span>: <span class="dv">1</span>, <span class="st">'notpresent'</span>: <span class="dv">0</span>},</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'htn'</span>: {<span class="st">'yes'</span>: <span class="dv">1</span>, <span class="st">'no'</span>: <span class="dv">0</span>},</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dm'</span>: {<span class="st">'yes'</span>: <span class="dv">1</span>, <span class="st">'no'</span>: <span class="dv">0</span>},</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'cad'</span>: {<span class="st">'yes'</span>: <span class="dv">1</span>, <span class="st">'no'</span>: <span class="dv">0</span>},</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'appet'</span>: {<span class="st">'good'</span>: <span class="dv">1</span>, <span class="st">'poor'</span>: <span class="dv">0</span>},</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'pe'</span>: {<span class="st">'yes'</span>: <span class="dv">1</span>, <span class="st">'no'</span>: <span class="dv">0</span>},</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'ane'</span>: {<span class="st">'yes'</span>: <span class="dv">1</span>, <span class="st">'no'</span>: <span class="dv">0</span>},</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'classification'</span>: {<span class="st">'ckd'</span>: <span class="dv">1</span>, <span class="st">'notckd'</span>: <span class="dv">0</span>}</span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Mengubah data berdasarkan aturan yang telah ditentukan</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>df[columns_to_convert] <span class="op">=</span> df[columns_to_convert].replace(conversion_rules)</span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Menampilkan data setelah konversi</span></span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[columns_to_convert])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     rbc   pc  pcc   ba  htn   dm  cad  appet   pe  ane  classification
+0    NaN  1.0  0.0  0.0  1.0  1.0  0.0    1.0  0.0  0.0               1
+1    NaN  1.0  0.0  0.0  0.0  0.0  0.0    1.0  0.0  0.0               1
+2    1.0  1.0  0.0  0.0  0.0  1.0  0.0    0.0  0.0  1.0               1
+3    1.0  0.0  1.0  0.0  1.0  0.0  0.0    0.0  1.0  1.0               1
+4    1.0  1.0  0.0  0.0  0.0  0.0  0.0    1.0  0.0  0.0               1
+..   ...  ...  ...  ...  ...  ...  ...    ...  ...  ...             ...
+395  1.0  1.0  0.0  0.0  0.0  0.0  0.0    1.0  0.0  0.0               0
+396  1.0  1.0  0.0  0.0  0.0  0.0  0.0    1.0  0.0  0.0               0
+397  1.0  1.0  0.0  0.0  0.0  0.0  0.0    1.0  0.0  0.0               0
+398  1.0  1.0  0.0  0.0  0.0  0.0  0.0    1.0  0.0  0.0               0
+399  1.0  1.0  0.0  0.0  0.0  0.0  0.0    1.0  0.0  0.0               0
+
+[400 rows x 11 columns]</code></pre>
+</div>
+</div>
+<p><strong>Mengisi missing value dengan rata-rata</strong></p>
+<p><strong>Berikut merupakan cara mengisi missing value secara manual</strong></p>
+<p><strong>Rumus</strong></p>
+<p><span class="math display">\[\text{Nilai yang akan diisi} = \frac{\text{Jumlah nilai pada kelas tertentu}}{\text{Total nilai pada kelas tertentu}} \times \text{Total nilai yang ada pada kolom} \]</span></p>
+<p><strong>Data Awal</strong></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Atribut</th>
+<th>Kelas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>20</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>25</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>NaN</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>30</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>NaN</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>NaN</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Perhitungan</strong></p>
+<ol type="1">
+<li><p><strong>Jumlah ‘Yes’ pada Atribut:</strong> <span class="math display">\[ 20 + \text{NaN} + 30 = 50 \]</span></p></li>
+<li><p><strong>Jumlah ‘No’ pada Atribut:</strong> <span class="math display">\[ 25 + \text{NaN} + \text{NaN} = 25 \]</span></p></li>
+<li><p><strong>Total Atribut sebelum diisi:</strong> <span class="math display">\[ 20 + 25 + \text{NaN} + 30 + \text{NaN} + \text{NaN} = \text{Total Atribut Sebelum} = 75 \]</span></p></li>
+<li><p><strong>Rumus untuk mengisi missing value di Atribut:</strong></p>
+<ul>
+<li><strong>Untuk kelas yes</strong> <span class="math display">\[\text{Nilai yang akan diisi} = \frac{50}{50} \times 75\]</span></li>
+<li><strong>Untuk kelas no</strong> <span class="math display">\[\text{Nilai yang akan diisi} = \frac{50}{25} \times 75\]</span></li>
+</ul></li>
+<li><p><strong>Perhitungan:</strong></p>
+<ul>
+<li><strong>Untuk kelas yes</strong> <span class="math display">\[\text{Nilai yang akan diisi} = \frac{50}{50} \times 75 = 75\]</span></li>
+<li><strong>Untuk kelas no</strong> <span class="math display">\[\text{Nilai yang akan diisi} = \frac{50}{25} \times 75 = 150\]</span></li>
+</ul></li>
+</ol>
+<p>Diperoleh untuk baris yang memiliki kelas yes akan diisi dengan nilai 75 dan baris yang memliki kelas no akan diisi dengan 150:</p>
+<p><strong>Data Setelah Diisi</strong></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Atribut</th>
+<th>Kelas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>20</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>25</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>75</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>30</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>150</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>150</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Untuk implementasinya disini akan menggunakan SimpleImputer dalam mengisi missing value pada data ini. SimpleImputer adalah sebuah kelas dalam pustaka scikit-learn yang menyediakan fungsionalitas untuk mengisi nilai yang hilang dalam dataset. Pada library ini terdapat 4 strategi yang dapat digunakan dalam pengisian missing value nantinya, yaitu sebagai berikut:</p>
+<ul>
+<li>mean: Mengisi nilai yang hilang dengan rata-rata dari nilai yang ada pada kolom.</li>
+<li>median: Mengisi nilai yang hilang dengan nilai tengah dari nilai yang ada pada kolom.</li>
+<li>most_frequent: Mengisi nilai yang hilang dengan nilai yang paling sering muncul pada kolom.</li>
+<li>constant: Mengisi nilai yang hilang dengan nilai konstan yang ditentukan sebelumnya.</li>
+</ul>
+<p><strong>Noted :</strong> Strategi yang akan digunakan pada tahap ini yaitu mean.</p>
+<div class="cell" data-outputid="9c205ef8-cf68-4dc0-ca81-5541a0aed19f" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.impute <span class="im">import</span> SimpleImputer</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Daftar kolom dengan missing values</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>columns_with_missing <span class="op">=</span> df.columns[df.isnull().<span class="bu">any</span>()]</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat objek SimpleImputer dengan strategi 'mean'</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>imputer <span class="op">=</span> SimpleImputer(strategy<span class="op">=</span><span class="st">'mean'</span>)</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Mengisi missing values dengan mean berdasarkan kelasnya</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> columns_with_missing:</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Pisahkan data berdasarkan kelas target</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> classification_value <span class="kw">in</span> df[<span class="st">'classification'</span>].unique():</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Ambil subset data untuk kelas tertentu</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>        subset_data <span class="op">=</span> df[df[<span class="st">'classification'</span>] <span class="op">==</span> classification_value]</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Pilih kolom yang sesuai</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>        subset_data_col <span class="op">=</span> subset_data[[col]]</span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Menggunakan SimpleImputer untuk mengisi missing value dengan mean</span></span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>        imputed_values <span class="op">=</span> imputer.fit_transform(subset_data_col)</span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Gabungkan kembali hasil imputasi ke DataFrame utama</span></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>        df.loc[df[<span class="st">'classification'</span>] <span class="op">==</span> classification_value, col] <span class="op">=</span> imputed_values</span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Cetak informasi dataset setelah mengisi missing value dengan mean berdasarkan kelasnya</span></span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 400 entries, 0 to 399
+Data columns (total 26 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   id              400 non-null    int64  
+ 1   age             400 non-null    float64
+ 2   bp              400 non-null    float64
+ 3   sg              400 non-null    float64
+ 4   al              400 non-null    float64
+ 5   su              400 non-null    float64
+ 6   rbc             400 non-null    float64
+ 7   pc              400 non-null    float64
+ 8   pcc             400 non-null    float64
+ 9   ba              400 non-null    float64
+ 10  bgr             400 non-null    float64
+ 11  bu              400 non-null    float64
+ 12  sc              400 non-null    float64
+ 13  sod             400 non-null    float64
+ 14  pot             400 non-null    float64
+ 15  hemo            400 non-null    float64
+ 16  pcv             400 non-null    float64
+ 17  wc              400 non-null    float64
+ 18  rc              400 non-null    float64
+ 19  htn             400 non-null    float64
+ 20  dm              400 non-null    float64
+ 21  cad             400 non-null    float64
+ 22  appet           400 non-null    float64
+ 23  pe              400 non-null    float64
+ 24  ane             400 non-null    float64
+ 25  classification  400 non-null    int64  
+dtypes: float64(24), int64(2)
+memory usage: 81.4 KB
+None</code></pre>
+</div>
+</div>
+</section>
+<section id="menghapus-data-outlier" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="menghapus-data-outlier"><span class="header-section-number">1.3.3</span> Menghapus Data Outlier</h3>
+<div class="cell" data-outputid="9f4e9feb-a95b-48db-93de-555327a4fa63" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Menghilangkan baris data yang mengandung outlier</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>df_cleaned <span class="op">=</span> df.drop(outlier_indices)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Menampilkan informasi setelah menghilangkan outlier</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jumlah baris sebelum menghilangkan outlier:"</span>, <span class="bu">len</span>(df))</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jumlah baris setelah menghilangkan outlier:"</span>, <span class="bu">len</span>(df_cleaned))</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Informasi DataFrame setelah menghapus outlier:"</span>)</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_cleaned.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Jumlah baris sebelum menghilangkan outlier: 400
+Jumlah baris setelah menghilangkan outlier: 381
+Informasi DataFrame setelah menghapus outlier:
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+Int64Index: 381 entries, 0 to 399
+Data columns (total 26 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   id              381 non-null    int64  
+ 1   age             381 non-null    float64
+ 2   bp              381 non-null    float64
+ 3   sg              381 non-null    float64
+ 4   al              381 non-null    float64
+ 5   su              381 non-null    float64
+ 6   rbc             381 non-null    float64
+ 7   pc              381 non-null    float64
+ 8   pcc             381 non-null    float64
+ 9   ba              381 non-null    float64
+ 10  bgr             381 non-null    float64
+ 11  bu              381 non-null    float64
+ 12  sc              381 non-null    float64
+ 13  sod             381 non-null    float64
+ 14  pot             381 non-null    float64
+ 15  hemo            381 non-null    float64
+ 16  pcv             381 non-null    float64
+ 17  wc              381 non-null    float64
+ 18  rc              381 non-null    float64
+ 19  htn             381 non-null    float64
+ 20  dm              381 non-null    float64
+ 21  cad             381 non-null    float64
+ 22  appet           381 non-null    float64
+ 23  pe              381 non-null    float64
+ 24  ane             381 non-null    float64
+ 25  classification  381 non-null    int64  
+dtypes: float64(24), int64(2)
+memory usage: 80.4 KB
+None</code></pre>
+</div>
+</div>
+<p>Simpan data yang sudah di transformasi dan sudah tidak ada missing value</p>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Menyimpan DataFrame ke dalam file CSV</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>df_cleaned.to_csv(<span class="st">'data_baru_bangetz.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span>  pd.read_csv(<span class="st">'data_baru_bangetz.csv'</span>)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>fitur <span class="op">=</span> data.drop(columns<span class="op">=</span>[<span class="st">'id'</span>,<span class="st">'classification'</span>])</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> data[<span class="st">'classification'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="d83b7026-15c8-49ed-9b23-50d15a1270af" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>target.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>1    235
+0    146
+Name: classification, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="ranking-setiap-fitur-dalam-data" class="level3" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="ranking-setiap-fitur-dalam-data"><span class="header-section-number">1.3.4</span> RANKING SETIAP FITUR DALAM DATA</h3>
+<p>Untuk memilih fitur terbaik dapat dengan me-renking fitur-fitur didalm dataset dengan mencari nilai mutual information setiap fitur agar dapat dibandingkan diurutkan dengan fitur lainnya. Padaproyek ini digunakan metode SelectKBest dengan mencari nilai mutual information dari setiap fitur.</p>
+<p><strong>MUTUAL INFORMATION</strong></p>
+<p>Mutual information (MI) adalah metrik yang berguna dalam pemilihan fitur karena mengukur seberapa banyak informasi yang saling terkait antara fitur (variabel independen) dengan variabel target (variabel dependen). Dalam konteks pemilihan fitur, kita ingin mempertahankan fitur-fitur yang memiliki hubungan yang kuat atau tinggi dalam menjelaskan variabel target.</p>
+<p>Rumus Mutual Information (MI) between X and Y:</p>
+<p><span class="math display">\[
+\text{MI}(X;Y) = \sum_{x \in X} \sum_{y \in Y} p(x, y) \log \left(\frac{p(x, y)}{p(x) \cdot p(y)}\right)
+\]</span></p>
+<p>Dimana: - MI(X;Y) adalah mutual information antara variabel X dan Y. - p(x,y) adalah probabilitas bersama dari X=x dan Y=y. - p(x) adalah probabilitas margina X=x. - p(y) adalah probabilitas margina Y=y.</p>
+<p>Dari tahap ini dihasilkan rangking dari setiap kolom atau fitur sehingga dapat mengetahui fitur-fitur yang memiliki ciri khas penting untuk data red wine itu sendiri. Pada tahap skenario percobaan nantinya akan dipilih fitur-fitur yang memiliki nilai mutual information tertinggi. Untuk memilih fitur-fitur yang terbaik dapat dimulai dengan menghapus fitur yang memiliki nilai mutual information paling rendah lalu skenario bergeser ke kiri dimana fitur yang dihapus yaitu fitur dengan mutual information terendah nomer 2 dan paling rendah. pemilihan fitur terus dilakukan pada skenario percobaan hingga mencapai akurasi tertinggi.</p>
+<p>Contoh Kasus untuk mengurutkan kolom dengan mutual information paling tinggi hingga terendah, di berikan tabel berikut :</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Variabel_1</th>
+<th>Variabel_2</th>
+<th>Variabel_Target</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>b</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>a</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>a</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>b</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>1</td>
+<td>3</td>
+<td>a</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Langkah 1 : Hitung distribusi probabilitas</li>
+</ul>
+<p>Untuk Variabel_Target: &gt; - P(Target=a) = 3/5 &gt; - P(Target=b) = 2/5</p>
+<p>Untuk Variabel_1: &gt; - P(Variabel_1=1) = 2/5 &gt; - P(Variabel_1=2) = 2/5 &gt; - P(Variabel_1=3) = 1/5</p>
+<p>Untuk Variabel_2:</p>
+<blockquote class="blockquote">
+<ul>
+<li>P(Variabel_2=1) = 1/5</li>
+<li>P(Variabel_2=2) = 2/5</li>
+<li>P(Variabel_2=3) = 2/5</li>
+</ul>
+</blockquote>
+<ul>
+<li>Langkah 2 : Hitung Entropi Entropi(variabel_Target) = - (3/5) * log2(3/5) - (2/5) * log2(2/5) ≈ 0.971</li>
+</ul>
+<p>Entropi(Variabel_1) = - (2/5) * log2(2/5) - (2/5) * log2(2/5) - (1/5) * log2(1/5) ≈ 1.571</p>
+<p>Entropi(Variabel_2) = - (1/5) * log2(1/5) - (2/5) * log2(2/5) - (2/5) * log2(2/5) ≈ 1.571</p>
+<ul>
+<li>Langkah 3 : Hitung Conditional Entropi</li>
+</ul>
+<p>Untuk setiap nilai Variabel_1, hitung Entropi(Target|Variabel_1).</p>
+<p>Variabel_1</p>
+<p>Conditional_Entropy(Target | Variabel_1) = P(Variabel_1=1) * Entropi(Target|Variabel_1=1) + P(Variabel_1=2) * Entropi(Target|Variabel_1=2) + P(Variabel_1=3) * Entropi(Target|Variabel_1=3)</p>
+<p>Entropi(Target|Variabel_1=1) = - (1/2) * log2(1/2) - (1/2) * log2(1/2) = 1.0</p>
+<p>Entropi(Target|Variabel_1=2) = - (1/1) * log2(1/1) - (1/1) * log2(1/1) = 0.0</p>
+<p>Entropi(Target|Variabel_1=3) = - (1/1) * log2(1/1) = 0.0</p>
+<p>Conditional_Entropy(Target | Variabel_1) = (2/5)×1.0+(2/5)×0.0+(1/5)×0.0</p>
+<p>Conditional_Entropy(Target | Variabel_1) = 0.4</p>
+<p>Variabel_2</p>
+<p>Conditional_Entropy(Target | Variabel_2) = P(Variabel_2=1) * Entropi(Target|Variabel_2=1) + P(Variabel_2=2) * Entropi(Target|Variabel_2=2) + P(Variabel_2=3) * Entropi(Target|Variabel_2=3)</p>
+<p>Entropi(Target | Variabel_2=1) = - (1) * log2(1) = 0</p>
+<p>Entropi(Target | Variabel_2=2) = - (0.5) * log2(0.5) - (0.5) * log2(0.5) = 1.0</p>
+<p>Entropi(Target | Variabel_2=3) = - (0.5) * log2(0.5) - (0.5) * log2(0.5) = 1.0</p>
+<p>Conditional_Entropy(Target | Variabel_2) = (1/5) * 0 + (2/5) * 1.0 + (2/5) * 1.0 = 0.8</p>
+<ul>
+<li>Langkah 4 : Hitung Mutual Information</li>
+</ul>
+<p>Mutual_Information(Variabel_1;Target) = 0.971 - 0.4 = 0.571</p>
+<p>Mutual_Information(Variabel_2;Target) = 0.971 - 0.8 = 0.171</p>
+<p>Dengan begitu variabel yang lebih berpengaruh adalah Variabel_1 dari Variabel_2</p>
+<div class="cell" data-outputid="de04e57c-e023-4e0a-d6bc-83f6277962ca" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_selection <span class="im">import</span> SelectKBest</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_selection <span class="im">import</span> mutual_info_classif</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>selector <span class="op">=</span> SelectKBest(score_func<span class="op">=</span>mutual_info_classif, k<span class="op">=</span><span class="st">'all'</span>)</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>X_new <span class="op">=</span> selector.fit_transform(fitur,target)</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> selector.scores_</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>feature_scores <span class="op">=</span> selector.scores_</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>feature_names <span class="op">=</span> [<span class="st">'age'</span>, <span class="st">'bp'</span>, <span class="st">'sg'</span>, <span class="st">'al'</span>, <span class="st">'su'</span>, <span class="st">'rbc'</span>, <span class="st">'pc'</span>, <span class="st">'pcc'</span>, <span class="st">'ba'</span>, <span class="st">'bgr'</span>,</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>       <span class="st">'bu'</span>, <span class="st">'sc'</span>, <span class="st">'sod'</span>, <span class="st">'pot'</span>, <span class="st">'hemo'</span>, <span class="st">'pcv'</span>, <span class="st">'wc'</span>, <span class="st">'rc'</span>, <span class="st">'htn'</span>, <span class="st">'dm'</span>, <span class="st">'cad'</span>,</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>       <span class="st">'appet'</span>, <span class="st">'pe'</span>, <span class="st">'ane'</span>]</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort the feature scores in descending order</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>sorted_indices <span class="op">=</span> feature_scores.argsort()[::<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the sorted feature scores and names</span></span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>sorted_scores <span class="op">=</span> feature_scores[sorted_indices]</span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>sorted_feature_names <span class="op">=</span> [feature_names[i] <span class="cf">for</span> i <span class="kw">in</span> sorted_indices]</span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the feature importances</span></span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>plt.bar(<span class="bu">range</span>(<span class="bu">len</span>(sorted_feature_names)), sorted_scores)</span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>plt.xticks(<span class="bu">range</span>(<span class="bu">len</span>(sorted_feature_names)), sorted_feature_names, rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Features'</span>)</span>
+<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Information Gain'</span>)</span>
+<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Feature Importance (Information Gain)'</span>)</span>
+<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Chronic_Kidney_Disease_files/figure-html/cell-23-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Berdasarkan skenario percobaan diperoleh fitur terbaik yang akan digunakan dalam klasifikasi ini adalah sebagai berikut:</p>
+<blockquote class="blockquote">
+<ul>
+<li>hemo</li>
+<li>pcv</li>
+<li>rc</li>
+<li>sc</li>
+<li>sg</li>
+<li>al</li>
+<li>rbc</li>
+<li>sod</li>
+<li>pot</li>
+<li>htn</li>
+<li>pc</li>
+<li>bgr</li>
+<li>wc</li>
+<li>bu</li>
+<li>dm</li>
+<li>bp</li>
+<li>appet</li>
+<li>su</li>
+<li>pcc</li>
+</ul>
+</blockquote>
+</section>
+<section id="split-data" class="level3" data-number="1.3.5">
+<h3 data-number="1.3.5" class="anchored" data-anchor-id="split-data"><span class="header-section-number">1.3.5</span> Split Data</h3>
+<p>Split Data dilakukan dengan menggunakan fitur terbaik yang sudah dipilih sebelumnya.</p>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co">#melakukan drop untuk fitur yang tidak digunakan</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>fitur <span class="op">=</span> data.drop(columns<span class="op">=</span>[<span class="st">'id'</span>,<span class="st">'age'</span>,<span class="st">'cad'</span>,<span class="st">'pe'</span>,<span class="st">'ane'</span>,<span class="st">'ba'</span>,<span class="st">'classification'</span>])</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> data[<span class="st">'classification'</span>]</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co"># melakukan pembagian dataset, dataset dibagi menjadi 80% data training dan 20% data testing</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>fitur_train, fitur_test, target_train, target_test <span class="op">=</span> train_test_split(fitur, target, test_size <span class="op">=</span> <span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="normalisasi-data" class="level3" data-number="1.3.6">
+<h3 data-number="1.3.6" class="anchored" data-anchor-id="normalisasi-data"><span class="header-section-number">1.3.6</span> Normalisasi Data</h3>
+<p>Normalisasi Data adalah salah satu proses dalam pre-processing data untuk mengatur dataset agar memenuhi standar tertentu. Data perlu dilakukan agar dapat mengurangi kemungkinan terjadinya redundansi data. Selain itu, normalisasi dagunakan untuk membantu menghindari anomali dalam pengolahan data dan memungkinkan desain basis data yang lebih efisien.</p>
+<p>ZSCORE</p>
+<hr>
+<p>Pengertian</p>
+<p>Metode StandardScaler adalah salah satu teknik normalisasi yang umum digunakan dalam pengolahan data. Tujuannya adalah untuk menyesuaikan distribusi data agar memiliki mean (rata-rata) nol dan standar deviasi satu. Ini berguna saat bekerja dengan algoritma yang sensitif terhadap skala dan asumsi dasar bahwa data terdistribusi normal atau mendekati distribusi normal.</p>
+<p>Proses normalisasi menggunakan StandardScaler melibatkan dua langkah utama:</p>
+<ol type="1">
+<li><p>Menghitung Mean dan Standar Deviasi: Pertama, perhitungan rata-rata (mean) dan standar deviasi dari setiap fitur (kolom) dalam data dilakukan.</p></li>
+<li><p>Transformasi Data: Setelah mendapatkan mean dan standar deviasi, nilai dari setiap fitur dikurangi dengan mean dari fitur tersebut, kemudian hasilnya dibagi dengan standar deviasi fitur tersebut. Proses ini dilakukan untuk setiap nilai dalam setiap fitur.</p></li>
+</ol>
+<p>Rumus Standard Scaler</p>
+<p><span class="math display">\[ X' = \frac{X - mean(X)}{std(X)} \]</span> Dimana : - X adalah nilai asli dari suatu kolom/fitur - mean(X) adalah nilai rata-rata dari setiap kolom - std(X) adalah nilai standard deviasi dari setiap kolom - X’ adalah nilai X yang telah dinormalisasi.</p>
+<p>Berikut cara menerapkan metode Standar Sclaing ini untuk melakukan normalisasi data : - Pertama perlu disiapkan tabel yang akan dilakukan normalisasi</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>X`</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>12</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>35</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>28</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>25</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Setelah itu, hitung standar deviasi dan rata-rata di kolom tersebut. Diketahui : &gt; - Standard Deviasi pada kolom X = 8.905055 &gt; - Rata-rata dalam kolom X = 23,6</p></li>
+<li><p>Setelah nilai standard deviasi dan rata-rata diketahui maka selanjutnya mulai melakukan normalisasi dengan menghitung X` seperti berikut:</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>X`</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>12</td>
+<td>(12 - 23,6) / (8.905055)</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>(18 - 23,6) / (8.905055)</td>
+</tr>
+<tr class="odd">
+<td>35</td>
+<td>(35 - 23,6) / (8.905055)</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>(28 - 23,6) / (8.905055)</td>
+</tr>
+<tr class="odd">
+<td>25</td>
+<td>(25 - 23,6) / (8.905055)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Dengan begitu dapat diketahui nilai pada kolom X setelah normalisasi (X`) adalah seperti berikut:</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>X`</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>12</td>
+<td>-1.30</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>-0.63</td>
+</tr>
+<tr class="odd">
+<td>35</td>
+<td>1.28</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>0.49</td>
+</tr>
+<tr class="odd">
+<td>25</td>
+<td>0.16</td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pickle</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co"># menentukan lokasi file pickle akan disimpan</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> <span class="st">'zscore_scaler_ckd.pkl'</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="co"># membuat dan melatih objek StandardScaler</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>zscore_scaler <span class="op">=</span> StandardScaler()</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>zscore_scaler.fit(fitur_train)</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a><span class="co"># menyimpan model ke dalam file pickle</span></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>    pickle.dump(zscore_scaler, <span class="bu">file</span>)</span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a><span class="co"># memanggil kembali model normalisasi zscore dari file pickle</span></span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">'rb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>    zscore_scaler <span class="op">=</span> pickle.load(<span class="bu">file</span>)</span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a><span class="co"># menerapkan normalisasi zscore pada data training</span></span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>zscore_training <span class="op">=</span> zscore_scaler.transform(fitur_train)</span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a><span class="co"># menerapkan normalisasi zscore pada data testing</span></span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>zscore_testing <span class="op">=</span> zscore_scaler.transform(fitur_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>MINMAX</p>
+<hr>
+<p>Pengertian</p>
+<p>MinMax Scaling adalah salah satu teknik untuk melakukan normalisasi pada data dengan merubah nilai-nilai dalam kumpulan data ke dalam rentang tertentu, biasanya antara 0 dan 1. Tujuan utamanya adalah untuk menjaga skala relatif antarfitur agar tidak mendominasi satu sama lain.</p>
+<p>Proses Min-Max Scaling dilakukan dengan langkah-langkah berikut:</p>
+<ol type="1">
+<li><p>Identifikasi Rentang: Tentukan rentang nilai yang ingin Anda gunakan. Biasanya, dalam Min-Max Scaling, rentang nilai yang dipilih adalah 0 hingga 1, tetapi ini bisa disesuaikan tergantung pada kasus penggunaan.</p></li>
+<li><p>Hitung Nilai Minimum dan Maksimum: Tentukan nilai minimum (min) dan nilai maksimum (max) dari setiap fitur dalam kumpulan data yang akan dinormalisasi.</p></li>
+<li><p>Normalisasi: Gunakan formula rumusn Min-Max Scaling untuk mengubah nilai-nilai dalam rentang yang ditentukan.</p></li>
+</ol>
+<p>Rumus Minmax Scaler</p>
+<p><span class="math display">\[ X' = \frac{X - min}{max - min} \]</span></p>
+<p>Dimana : - X adalah nilai asli dari suatu kolom/fitur - min adalah nilai minimum dari suatu kolom/fitur dalam dataset - max adalah nilai maximum dari suatu kolom/fitur dalam dataset - X’ adalah nilai X yang telah dinormalisasi.</p>
+<p>Berikut Contoh Penggunaan minmax pada data, sebagai berikut: - Terdapat sebuah tabel dengan kolom X, seperti berikut:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>X`</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Untuk melakukan normalisasi dengan Min-Max Scaling, maka perlu diidentifikasi nilai tertingggi dan terendah pada kolom. Deketahui : &gt; - Nilai terendah pada kolom X (min) = 2 &gt; - Nilai tertinggi pada kolom X (max) = 10</li>
+<li>Lalu untuk menentukan nilai X yang telah dinormalisasi maka dengan menghitung setiap baris data yang dimasukkan kedalam rumus Min-Max Scaling seperti berikut:</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>X`</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>(2 - 2) / ( 10 - 2)</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>(4 - 2) / ( 10 - 2)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>(3 - 2) / ( 10 - 2)</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>(10 - 2) / ( 10 - 2)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Sehingga nilai X’ hasil normalisasi dapat diketahui seperti berikut :</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>X`</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>0.25</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>0.125</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pickle</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> MinMaxScaler</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co"># menentukan lokasi file pickle akan disimpan</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> <span class="st">'minmax_scaler_ckd.pkl'</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co"># membuat dan melatih objek MinMaxScaler</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>minmaxscaler <span class="op">=</span> MinMaxScaler()</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>minmaxscaler.fit(fitur_train)</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="co"># menyimpan model ke dalam file pickle</span></span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>    pickle.dump(minmaxscaler, <span class="bu">file</span>)</span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a><span class="co"># memanggil kembali model normalisasi minmaxscaler dari file pickle</span></span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">'rb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>    minmaxscaler <span class="op">=</span> pickle.load(<span class="bu">file</span>)</span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a><span class="co"># menerapkan normalisasi zscore pada data training</span></span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>minmax_training <span class="op">=</span> minmaxscaler.transform(fitur_train)</span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a><span class="co"># menerapkan normalisasi zscore pada data testing</span></span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>minmax_testing <span class="op">=</span> minmaxscaler.transform(fitur_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="modeling" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="modeling"><span class="header-section-number">1.4</span> 4. MODELING</h2>
+<hr>
+<p>Setelah dilakukan skenario perulangan untuk menghasilkan model terbaik, dapat dikeathui bahwasannya model klasifikasi yang terbaik untuk data anggur merah ini adalah dengan menggunakan : - Metode Random Forest - Metode normalisasi nya adalah Zscore Scaler - Banyak Fitur yang digunakan dalam data sebanyak 19 fitur - Parameter dalam metode yang digunakan, sebagai berikut:</p>
+<blockquote class="blockquote">
+<ul>
+<li>jumlah estimator : 50, 100, 200</li>
+<li>maksimal kedalaman : None, 10, 20, 30</li>
+<li>minimal pembagian sampel : 2, 5, 10</li>
+<li>minimal sampel daun : 1, 2, 4</li>
+</ul>
+</blockquote>
+<section id="random-forest" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="random-forest"><span class="header-section-number">1.4.1</span> RANDOM FOREST</h3>
+<hr>
+<p>Random Forest adalah algoritma pembelajaran terawasi yang digunakan untuk tugas klasifikasi dan regresi dalam machine learning. Ini merupakan bagian dari keluarga algoritma yang dikenal sebagai ensemble learning, yang menggabungkan hasil beberapa model untuk meningkatkan kinerja dan ketepatan prediksi.</p>
+<p>Konsep inti dari Random Forest adalah membuat sejumlah besar pohon keputusan saat melakukan prediksi. Setiap pohon keputusan dibuat berdasarkan sampel acak dari data pelatihan dan fitur yang dipilih secara acak. Proses ini mengurangi risiko overfitting (memfitting data pelatihan secara berlebihan) yang sering terjadi pada pohon keputusan tunggal.</p>
+<p>Selama proses pelatihan, setiap pohon keputusan dalam hutan acak memilih subset data yang diambil secara acak dan subset fitur untuk membuat keputusan. Ketika melakukan prediksi, setiap pohon memberikan hasilnya, dan hasil akhir dari Random Forest diperoleh dengan mengambil mayoritas suara dari semua pohon keputusan (untuk klasifikasi) atau rerata hasil (untuk regresi).</p>
+<p>Kelebihan dari Random Forest termasuk kemampuannya dalam menangani data yang besar dengan fitur yang banyak, serta kemampuan untuk mengatasi overfitting. Namun, seperti halnya dengan banyak algoritma machine learning, pengaturan parameter yang tidak tepat atau kekurangan pemrosesan data yang tepat dapat mempengaruhi kinerja Random Forest.</p>
+<p>Random Forest terdiri dari beberapa pohon keputusan yang dibuat secara acak. Untuk setiap pohon keputusan:</p>
+<ul>
+<li><p>Sampling Data: Lakukan bootstrap sampling pada dataset (ambil sampel acak dengan penggantian).</p>
+<p>Bootstrap Sampling: Proses pengambilan sampel acak dengan penggantian dari dataset yang sama ukuran dengan dataset asli.</p></li>
+<li><p>Pemilihan Jumlah Pohon (n_estimators): Tentukan jumlah pohon keputusan yang akan dibuat dalam Random Forest.</p></li>
+<li><p>Pemilihan Fitur: Ambil subset acak dari fitur-fitur yang tersedia untuk membangun pohon.</p></li>
+<li><p>Pembentukan Pohon: Gunakan algoritma pembentukan pohon (seperti CART atau ID3) untuk membagi data berdasarkan aturan yang paling informatif.</p></li>
+</ul>
+<div class="cell" data-outputid="5194c0d2-389f-4116-d7ec-34579f24c187" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pickle</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Definisi parameter grid untuk Random Forest</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>param_grid <span class="op">=</span> {</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'n_estimators'</span>: [<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">200</span>],  <span class="co"># Jumlah pohon dalam ensemble</span></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'max_depth'</span>: [<span class="va">None</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>],  <span class="co"># Kedalaman maksimum pohon</span></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'min_samples_split'</span>: [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>],  <span class="co"># Jumlah minimum sampel yang diperlukan untuk membagi simpul</span></span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'min_samples_leaf'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>],  <span class="co"># Jumlah minimum sampel di ujung daun</span></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Inisialisasi model Random Forest</span></span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>rf_classifier <span class="op">=</span> RandomForestClassifier()</span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Grid Search dengan model Random Forest dan parameter grid</span></span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>grid_search <span class="op">=</span> GridSearchCV(estimator<span class="op">=</span>rf_classifier, param_grid<span class="op">=</span>param_grid, cv<span class="op">=</span><span class="dv">5</span>, scoring<span class="op">=</span><span class="st">'accuracy'</span>)</span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a>grid_search.fit(zscore_training, target_train)</span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Cetak parameter terbaik</span></span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Best Parameters:"</span>, grid_search.best_params_)</span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a>best_n_estimators <span class="op">=</span> grid_search.best_params_[<span class="st">'n_estimators'</span>]</span>
+<span id="cb44-24"><a href="#cb44-24" aria-hidden="true" tabindex="-1"></a>best_max_depth <span class="op">=</span> grid_search.best_params_[<span class="st">'max_depth'</span>]</span>
+<span id="cb44-25"><a href="#cb44-25" aria-hidden="true" tabindex="-1"></a>best_min_samples_split <span class="op">=</span> grid_search.best_params_[<span class="st">'min_samples_split'</span>]</span>
+<span id="cb44-26"><a href="#cb44-26" aria-hidden="true" tabindex="-1"></a>best_min_samples_leaf <span class="op">=</span> grid_search.best_params_[<span class="st">'min_samples_leaf'</span>]</span>
+<span id="cb44-27"><a href="#cb44-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-28"><a href="#cb44-28" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Best Parameters: {'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 50}</code></pre>
+</div>
+</div>
+<div class="cell" data-outputid="aa14526b-3832-47f1-e9e8-a314abbe334a" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inisialisasi model Random Forest dengan parameter terbaik</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>best_rf_model <span class="op">=</span> RandomForestClassifier(</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    n_estimators<span class="op">=</span>best_n_estimators,</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    max_depth<span class="op">=</span>best_max_depth,</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    min_samples_split<span class="op">=</span>best_min_samples_split,</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    min_samples_leaf<span class="op">=</span>best_min_samples_leaf</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Melatih model terbaik pada data training</span></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>best_rf_model.fit(zscore_training, target_train)</span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Melakukan prediksi dan mengukur akurasi pada data testing</span></span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> best_rf_model.predict(zscore_testing)</span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>best_accuracy <span class="op">=</span> accuracy_score(target_test, y_pred)</span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Best Accuracy:"</span>, best_accuracy)</span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Simpan model Random Forest terbaik dan informasi terkait dalam file pickle</span></span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a><span class="co"># best_model_info = {</span></span>
+<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a><span class="co">#     'best_rf_model': best_rf_model</span></span>
+<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-23"><a href="#cb46-23" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> joblib <span class="im">import</span> dump, load</span>
+<span id="cb46-24"><a href="#cb46-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-25"><a href="#cb46-25" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
+<span id="cb46-26"><a href="#cb46-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-27"><a href="#cb46-27" aria-hidden="true" tabindex="-1"></a><span class="co"># menyimpan model dengan joblib</span></span>
+<span id="cb46-28"><a href="#cb46-28" aria-hidden="true" tabindex="-1"></a><span class="co"># dump(best_model_info, 'best_rf_model_zscore_ckd.joblib')</span></span>
+<span id="cb46-29"><a href="#cb46-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-30"><a href="#cb46-30" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'best_rf_model_zscore_ckd.pkl'</span>, <span class="st">'wb'</span>) <span class="im">as</span> model_file:</span>
+<span id="cb46-31"><a href="#cb46-31" aria-hidden="true" tabindex="-1"></a>    pickle.dump(best_rf_model, model_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Best Accuracy: 1.0</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="evaluasi-model" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="evaluasi-model"><span class="header-section-number">1.5</span> EVALUASI MODEL</h2>
+<hr>
+<p>Pada tahap ini model terbaik yang diperoleh pada tahap modeling dilakukan validasi dengan menampilkan nilai confusion matrix nya atau laporan klasifikasinya dengan menggunakan grafik ROC-AUC</p>
+<section id="confusion-matrix" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="confusion-matrix"><span class="header-section-number">1.5.1</span> CONFUSION MATRIX</h3>
+<hr>
+<p>Confusion matrix adalah sebuah tabel yang digunakan dalam evaluasi kinerja model klasifikasi untuk memahami performa model dalam memprediksi kelas-kelas target. Matrix ini memiliki empat sel yang mewakili:</p>
+<ol type="1">
+<li>True Positive (TP): Prediksi yang benar ketika kelas sebenarnya adalah positif.</li>
+<li>True Negative (TN): Prediksi yang benar ketika kelas sebenarnya adalah negatif.</li>
+<li>False Positive (FP): Prediksi yang salah ketika model memprediksi positif tetapi kelas sebenarnya negatif (juga dikenal sebagai Type I error).</li>
+<li>False Negative (FN): Prediksi yang salah ketika model memprediksi negatif tetapi kelas sebenarnya positif (juga dikenal sebagai Type II error).</li>
+</ol>
+<p>Bentuk dari tabel Confusion Matrix</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Predicted Negative</th>
+<th>Predicted Positive</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Actual Negative</td>
+<td>True Negative (TN)</td>
+<td>False Positive (FP)</td>
+</tr>
+<tr class="even">
+<td>Actual Positive</td>
+<td>False Negative (FN)</td>
+<td>True Positive (TP)</td>
+</tr>
+</tbody>
+</table>
+<p>Dari Confusion Matriks, kta dapat menghitung metrik evaluasi seperti akurasi, presisi, recall, F1-score, dan lainnya yang membantu dalam mengevaluasi performa model klasifikasi.</p>
+<p><strong>Metrik Evaluasi</strong></p>
+<p>Metrik evaluasi adalah ukuran atau parameter yang digunakan untuk mengevaluasi kinerja suatu model atau sistem dalam melakukan tugas tertentu, seperti klasifikasi, regresi, atau tugas lainnya dalam bidang machine learning dan statistika. Metrik-metrik ini membantu dalam memahami seberapa baik atau buruk model tersebut dalam melakukan prediksi atau tugas yang ditetapkan.</p>
+<p>Beberapa metrik evaluasi umum dalam machine learning termasuk: &gt; - Akurasi (Accuracy): Seberapa sering model memberikan prediksi yang benar secara keseluruhan. Rumus Akurasi : <span class="math display">\[ Accuracy = \frac{TN + TP}{TN + FP + FN + TP} \]</span> &gt; - Presisi (Precision): Proporsi dari prediksi positif yang benar dibandingkan dengan semua prediksi positif yang dibuat oleh model Rumus Precision : <span class="math display">\[ Precision = \frac{TP}{TP + FP} \]</span> &gt; - Recall (Sensitivity atau True Positive Rate): Proporsi dari kelas positif yang diprediksi dengan benar oleh model. Rumus Recall : <span class="math display">\[ Recall = \frac{TP}{TP + FN} \]</span> &gt; - F1-Score: Nilai rata-rata harmonik antara presisi dan recall. Berguna ketika perlu menyeimbangkan antara presisi dan recall. Rumus F1-Score : <span class="math display">\[ F1-Score = 2 x \frac {Presisi x Recall}{Presisi x Recall} \]</span> &gt; - Specificity (Specificity atau True Negative Rate): Proporsi dari kelas negatif yang diprediksi dengan benar oleh model. Rumus Specificity : <span class="math display">\[ Specificity = \frac{TN}{TN + FP} \]</span></p>
+<div class="cell" data-outputid="1151a4c9-ed85-4e35-a3b7-147fd9b9c122" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix, classification_report, roc_auc_score,roc_curve</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluasi model dengan data uji Zscore</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">EVALUASI MODEL DENGAN DATA UJI ZSCORE"</span>)</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Confusion Matrix Zscore:"</span>)</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>conf_matrix <span class="op">=</span> confusion_matrix(target_test, y_pred)</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conf_matrix)</span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Mendapatkan nilai TP, TN, FP, FN dari confusion matrix</span></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>TN <span class="op">=</span> conf_matrix[<span class="dv">0</span>, <span class="dv">0</span>]</span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>FP <span class="op">=</span> conf_matrix[<span class="dv">0</span>, <span class="dv">1</span>]</span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>FN <span class="op">=</span> conf_matrix[<span class="dv">1</span>, <span class="dv">0</span>]</span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>TP <span class="op">=</span> conf_matrix[<span class="dv">1</span>, <span class="dv">1</span>]</span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">True Positive (TP):"</span>, TP)</span>
+<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"True Negative (TN):"</span>, TN)</span>
+<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"False Positive (FP):"</span>, FP)</span>
+<span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"False Negative (FN):"</span>, FN)</span>
+<span id="cb48-19"><a href="#cb48-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-20"><a href="#cb48-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Classification Report Zscore:"</span>)</span>
+<span id="cb48-21"><a href="#cb48-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(target_test, y_pred))</span>
+<span id="cb48-22"><a href="#cb48-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ROC-AUC Score Zscore:"</span>, roc_auc_score(target_test, y_pred))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+EVALUASI MODEL DENGAN DATA UJI ZSCORE
+Confusion Matrix Zscore:
+[[27  0]
+ [ 0 50]]
+
+True Positive (TP): 50
+True Negative (TN): 27
+False Positive (FP): 0
+False Negative (FN): 0
+
+Classification Report Zscore:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        27
+           1       1.00      1.00      1.00        50
+
+    accuracy                           1.00        77
+   macro avg       1.00      1.00      1.00        77
+weighted avg       1.00      1.00      1.00        77
+
+ROC-AUC Score Zscore: 1.0</code></pre>
+</div>
+</div>
+</section>
+<section id="grafik-roc-auc" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="grafik-roc-auc"><span class="header-section-number">1.5.2</span> GRAFIK ROC-AUC</h3>
+<hr>
+<p>Metrik evaluasi ROC (Receiver Operating Characteristic) dan AUC (Area Under the ROC Curve) adalah alat evaluasi yang digunakan untuk mengukur kinerja model klasifikasi, terutama ketika model harus mengklasifikasikan antara dua kelas.</p>
+<p><strong>Receiver Operating Characteristic (ROC) Curve</strong></p>
+<p>ROC Curve adalah adalah kurva grafik yang menampilkan kinerja model klasifikasi pada berbagai tingkat cutoff (threshold) untuk membedakan antara kelas positif dan negatif. Didalam ROC kurva dapat diketahui sensitivity (True Positive Rate) dan False Positive Rate (1-Specificity), untuk menunjukkan seberapa baik model klasifikasi sehingga dapat membedakan antara kelas positif dan negatif.</p>
+<p><strong>Area Under the ROC Curve (AUC-ROC):</strong></p>
+<p>AUC-ROC adalah ukuran dari luas area di bawah kurva ROC.</p>
+<ul>
+<li>Interpretasi : Nilai AUC berkisar antara 0 hingga 1. Semakin dekat nilainya ke 1, semakin baik model dalam membedakan antara kelas positif dan negatif. Jika nilainya 0.5, itu menunjukkan klasifikasi acak.</li>
+</ul>
+<div class="cell" data-outputid="a46a77a0-67f4-497f-d988-079fb092891f" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix, classification_report, roc_auc_score,roc_curve</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalisasi Z-score pada data uji</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>y_pred_zscore <span class="op">=</span> scaler.fit_transform(y_pred.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>))  <span class="co"># Reshape agar sesuai dengan format yang diharapkan oleh fit_transform</span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Kurva ROC-AUC untuk model dengan data uji Z-score</span></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>fpr_zscore, tpr_zscore, thresholds_zscore <span class="op">=</span> roc_curve(target_test, y_pred_zscore)</span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>roc_auc_zscore <span class="op">=</span> roc_auc_score(fpr_zscore, tpr_zscore)</span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>plt.plot(fpr_zscore, tpr_zscore, label<span class="op">=</span><span class="st">'ROC Curve Z-score (area = </span><span class="sc">%0.2f</span><span class="st">)'</span> <span class="op">%</span> roc_auc_zscore)</span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">0</span>, <span class="dv">1</span>], <span class="st">'k--'</span>)</span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'False Positive Rate'</span>)</span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'True Positive Rate'</span>)</span>
+<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Receiver Operating Characteristic (ROC) Curve Z-score'</span>)</span>
+<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
+<span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Chronic_Kidney_Disease_files/figure-html/cell-30-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="deployment" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="deployment"><span class="header-section-number">1.6</span> 5. Deployment</h2>
+<p>Pada tahap deployment, menggunakan streamlit dengan file yang berekstensi <strong>.py</strong> . File yang dilakukan pengolahan yaitu sebagai berikut : - model normalisasi ZsCore yang disimpan dalam file pickle - model dengan algoritma terbaik pada pengolahan data ini yaitu Random Forest</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
