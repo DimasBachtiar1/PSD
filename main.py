@@ -61,11 +61,14 @@ st.warning("Tekan 0 untuk 'normal' dan 1 untuk 'abnormal'")
 rbc_options = ['none','0', '1']
 selected_rbc = st.selectbox("Pilih status Red Blood Cells (rbc) atau sel darah merah:", rbc_options)
 
-st.warning('''Tekan 0 jika kadar albumin dalam urin sangat rendah <br>
+st.warning(
+            """
+            Tekan 0 jika kadar albumin dalam urin sangat rendah <br>
             Tekan 1 jika tingkat mikroalbuminuria redah (ginjal mengalami kerusakan awal) <br>
             Tekan 2 jika adanya peningkatan mikroalbuminuria (ginjal mengalami kerusakan sedang <br>
             Tekan 3-4 jika adanya peningkatan yang signifikan pada mikroalbuminuria (ginjal mengalami kerusakan parah)<br>
-            Tekan 5 jika menunjukkan tingkat albuminuria yang sangat tinggi (ginjal mengalami kerusakan yang sangat parah)''')
+            Tekan 5 jika menunjukkan tingkat albuminuria yang sangat tinggi (ginjal mengalami kerusakan yang sangat parah)
+            """)
 al_options = ['none','0', '1', '2', '3', '4', '5']
 selected_al = st.selectbox("Pilih tingkatan Albumin (al) atau kadar albumin dalam urin:", al_options)
 
@@ -93,11 +96,14 @@ st.warning("Tekan 0 untuk 'no' dan 1 untuk 'yes'")
 dm_options = ['none','0', '1']
 selected_dm = st.selectbox("Pilih status Diabetes Mellitus (dm):", dm_options)
 
-st.warning('''Tekan 0 jika tidak ada glukosa yang terdeteksi glukosa dalam urin <br>
+st.warning(
+            """
+            Tekan 0 jika tidak ada glukosa yang terdeteksi glukosa dalam urin <br>
             Tekan 1 jika menunjukkan adanya sedikit glukosa dalam urin <br>
             Tekan 2 jika menunjukkan adanya peningkatan yang siginifikan pada glukosa dalam urin <br>
             Tekan 3-4 jika menunjukkan adanya peningkatan yang lebih siginifikan pada glukosa dalam urin, adanya masalah metabolik yang lebih serius <br>
-            Tekan 5 jika menunjukkan tingkat glukosa yang sangat tinggi dalam urin, terdapat gangguan metabolisme glukosa yang sangat serius''')
+            Tekan 5 jika menunjukkan tingkat glukosa yang sangat tinggi dalam urin, terdapat gangguan metabolisme glukosa yang sangat serius
+            """)
 su_options = ['none','0', '1', '2', '3', '4', '5']
 selected_su = st.selectbox("Pilih tingkatan Sugar (su) atau kadar gula dalam urin:", su_options)
 
