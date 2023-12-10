@@ -48,55 +48,68 @@ prediksi_target = model_rf.predict(zscore_testing)
 
 # prediksi
 
-hemo = st.slider("Hemoglobin (hemo):", min_value=0.0, max_value=20.0, value=10.0)
-pcv = st.slider("Packed Cell Volume (pcv):", min_value=0.0, max_value=100.0, value=40.0)
-rc = st.slider("Red Blood Cell Count (rc):", min_value=0.0, max_value=10.0, value=4.5)
-sc = st.slider("Serum Creatinine (sc):", min_value=0.0, max_value=10.0, value=1.0)
-sg = st.slider("Specific Gravity (sg):", min_value=1.0, max_value=2.0, value=1.020)
+st.write("Penyakit Ginjal Kronis adalah suatu kondisi di mana fungsi ginjal 
+secara bertahap menurun selama periode waktu yang cukup lama. Ginjal memiliki peran penting dalam menyaring limbah dan kelebihan cairan dari darah, 
+serta dalam menjaga keseimbangan elektrolit dan tekanan darah.")
+
+
+hemo = st.slider("Imputkan kadar Hemoglobin (hemo) (g/dl):", min_value=0.0, max_value=20.0, value=10.0)
+pcv = st.slider("Imputkan kadar Packed Cell Volume (pcv) atau volume sel darah merah dalam darah (%):", min_value=0.0, max_value=100.0, value=40.0)
+rc = st.slider("Imputkan kadar Red Blood Cell Count (rc) atau jumlah sel darah merah (juta/cmm):", min_value=0.0, max_value=10.0, value=4.5)
+sc = st.slider("Imputkan kadar Serum Creatinine (sc) atau kadar kreatin dalam darah (mgs/dl):", min_value=0.0, max_value=10.0, value=1.0)
+sg = st.slider("Imputkan kadar Specific Gravity (sg) atau berat jenis urin (g/ml):", min_value=1.0, max_value=2.0, value=1.020)
 
 st.warning("Tekan 0 untuk 'normal' dan 1 untuk 'abnormal'")
 rbc_options = ['none','0', '1']
-selected_rbc = st.selectbox("Red Blood Cells (rbc):", rbc_options)
+selected_rbc = st.selectbox("Pilih status Red Blood Cells (rbc) atau sel darah merah:", rbc_options)
 
-st.warning("Tekan 0 untuk 'tidak' dan 1 untuk 'ya'")
+st.warning('''Tekan 0 jika kadar albumin dalam urin sangat rendah
+            Tekan 1 jika tingkat mikroalbuminuria redah (ginjal mengalami kerusakan awal)
+            Tekan 2 jika adanya peningkatan mikroalbuminuria (ginjal mengalami kerusakan sedang)
+            Tekan 3-4 jika adanya peningkatan yang signifikan pada mikroalbuminuria (ginjal mengalami kerusakan parah)
+            Tekan 5 jika menunjukkan tingkat albuminuria yang sangat tinggi (ginjal mengalami kerusakan yang sangat parah)''')
 al_options = ['none','0', '1', '2', '3', '4', '5']
-selected_al = st.selectbox("Albumin (al):", al_options)
+selected_al = st.selectbox("Pilih tingkatan Albumin (al) atau kadar albumin dalam urin:", al_options)
 
-sod = st.slider("Sodium (sod):", min_value=0.0, max_value=200.0, value=140.0)
+sod = st.slider("Imputkan kadar Sodium (sod) atau kadar natrium dalam darah (mEq/L):", min_value=0.0, max_value=200.0, value=140.0)
 
 st.warning("Tekan 0 untuk 'no' dan 1 untuk 'yes'")
 htn_options = ['none','0', '1']
-selected_htn = st.selectbox("Hypertension (htn):", htn_options)
+selected_htn = st.selectbox("Pilih status Hypertension (htn) atau hipertensi:", htn_options)
 
-pot = st.slider("Potassium (pot):", min_value=0.0, max_value=7.0, value=4.0)
+pot = st.slider("Imputkan kadar Potassium (pot) atau kadar kalium dalam darah (mEq/L):", min_value=0.0, max_value=7.0, value=4.0)
 
-bu = st.slider("Blood Urea (bu):", min_value=0.0, max_value=300.0, value=40.0)
+bu = st.slider("Imputkan kadar Blood Urea (bu) atau kadar urea dalam darah (mg/dL):", min_value=0.0, max_value=300.0, value=40.0)
 
-wc = st.slider("White Blood Cell Count (wc):", min_value=0.0, max_value=25000.0, value=8000.0)
+wc = st.slider("Imputkan kadar White Blood Cell Count (wc) atau jumlah sel darah putih (cels/cumm):", min_value=0.0, max_value=25000.0, value=8000.0)
 
-bgr = st.slider("Blood Glucose Random (bgr):", min_value=0.0, max_value=300.0, value=100.0)
+bgr = st.slider("Imputkan kadar Blood Glucose Random (bgr) atau kadar glukosa darah (mgs/dL):", min_value=0.0, max_value=300.0, value=100.0)
 
 st.warning("Tekan 0 untuk 'abnormal' dan 1 untuk 'normal'")
 pc_options = ['none','0', '1']
-selected_pc = st.selectbox("Pus Cell (pc):", pc_options)
+selected_pc = st.selectbox("Pilih status Pus Cell (pc) atau sel darah putih:", pc_options)
 
-bp = st.slider("Blood Pressure (bp):", min_value=0, max_value=180, value=120)
+bp = st.slider("Imputkan kadar Blood Pressure (bp) atau tekanan darah (mm/hg):", min_value=0, max_value=180, value=120)
 
 st.warning("Tekan 0 untuk 'no' dan 1 untuk 'yes'")
 dm_options = ['none','0', '1']
-selected_dm = st.selectbox("Diabetes Mellitus (dm):", dm_options)
+selected_dm = st.selectbox("Pilih status Diabetes Mellitus (dm):", dm_options)
 
-st.warning("Tekan 0 untuk 'no' dan 1 untuk 'yes'")
+st.warning('''Tekan 0 jika tidak ada glukosa yang terdeteksi glukosa dalam urin
+            Tekan 1 jika menunjukkan adanya sedikit glukosa dalam urin
+            Tekan 2 jika menunjukkan adanya peningkatan yang siginifikan pada glukosa dalam urin
+            Tekan 3-4 jika menunjukkan adanya peningkatan yang lebih siginifikan pada glukosa dalam urin, adanya masalah metabolik yang lebih serius
+            Tekan 5 jika menunjukkan tingkat glukosa yang sangat tinggi dalam urin, terdapat gangguan metabolisme glukosa yang sangat serius''')
 su_options = ['none','0', '1', '2', '3', '4', '5']
-selected_su = st.selectbox("Sugar (su):", su_options)
+selected_su = st.selectbox("Pilih tingkatan Sugar (su) atau kadar gula dalam urin:", su_options)
 
 st.warning("Tekan 0 untuk 'poor' dan 1 untuk 'good'")
 appet_options = ['none','0', '1']
-selected_appet = st.selectbox("Appetite (appet):", appet_options)
+selected_appet = st.selectbox("Pilih status Appetite (appet) atau kondisi nafsu makan :", appet_options)
 
-st.warning("Tekan 0 untuk 'no' dan 1 untuk 'yes'")
+st.warning("Tekan 0 jika tidak terdapat pembengkakan(edema) pada kaki dan 1 jika terdapat pembengkakan(edema) pada kaki")
 pe_options = ['0', '1']
-selected_pe = st.selectbox("Pedal Edema (pe):", pe_options)
+selected_pe = st.selectbox("Pilih status Pedal Edema (pe) atau keberadaan edema pada kaki:", pe_options)
 
 
 if st.button('Cek Hasil'):
