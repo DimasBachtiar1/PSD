@@ -48,9 +48,7 @@ prediksi_target = model_rf.predict(zscore_testing)
 
 # prediksi
 
-st.write("Penyakit Ginjal Kronis adalah suatu kondisi di mana fungsi ginjal 
-secara bertahap menurun selama periode waktu yang cukup lama. Ginjal memiliki peran penting dalam menyaring limbah dan kelebihan cairan dari darah, 
-serta dalam menjaga keseimbangan elektrolit dan tekanan darah.")
+st.write("Penyakit Ginjal Kronis adalah suatu kondisi di mana fungsi ginjal secara bertahap menurun selama periode waktu yang cukup lama. Ginjal memiliki peran penting dalam menyaring limbah dan kelebihan cairan dari darah, serta dalam menjaga keseimbangan elektrolit dan tekanan darah.")
 
 
 hemo = st.slider("Imputkan kadar Hemoglobin (hemo) (g/dl):", min_value=0.0, max_value=20.0, value=10.0)
